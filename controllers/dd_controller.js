@@ -50,16 +50,59 @@ module.exports = function (app) {
 			});
 		}
 	});
-	app.post("/api/decision", function (req, res) {
-		console.log(req.body);
-		db.Decision.create({
-			description: req.body.description,
-			user_id: req.body.user_id
-		}).then(function () {
-			res.redirect(307, "/");
+
+	app.get('/api/decision/all', (req, res) => {
+		db.Decision.findAll({
+			include: [{
+				model: db.Choice
+			}]
+		}).then(function (dbDecision) {
+			// res.redirect(307, "/");
+			res.json(dbDecision)
 		}).catch(function (err) {
 			console.log(err);
 			res.json(err);
 		});
 	});
+
+	app.post("/api/decision", function (req, res) {
+		// console.log(req.body);
+		db.Decision.create({
+			description: req.body.description,
+<<<<<<< HEAD
+			user_id: req.body.user_id
+		}).then(function () {
+			res.redirect(307, "/");
+=======
+			user_id: req.body.user_id,
+			choices: [
+				{ text: req.body.text1, photo: req.body.photo1 },
+				{ text: req.body.text2, photo: req.body.photo2 }
+			]
+		}, {
+			include: [ db.Choice ]
+		}).then(function (dbDecision) {
+			// res.redirect(307, "/");
+			res.json(dbDecision)
+>>>>>>> 248cf893d3efd0a88ba1b8fde4d087759d278083
+		}).catch(function (err) {
+			console.log(err);
+			res.json(err);
+		});
+	});
+
+	// app.post("/api/choice", function (req, res) {
+	// 	console.log(req.body);
+	// 	db.Choice.create({
+	// 		text: req.body.text,
+	// 		photo: req.body.photo,
+	// 		decision_id: req.body.decision_id
+	// 	}).then(function (dbChoice) {
+	// 		// res.redirect(307, "/");
+	// 		res.json(dbChoice)
+	// 	}).catch(function (err) {
+	// 		console.log(err);
+	// 		res.json(err);
+	// 	});
+	// });
 };
