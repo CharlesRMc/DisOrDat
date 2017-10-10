@@ -19,5 +19,9 @@ module.exports = function (sequelize, DataTypes) {
         });
     };
 
+    Decision.associate = function (models) {
+        Decision.hasMany(models.Choice);
+    };
+
     return Decision;
 };
