@@ -50,4 +50,16 @@ module.exports = function (app) {
 			});
 		}
 	});
+	app.post("/api/decision", function (req, res) {
+		console.log(req.body);
+		db.Decision.create({
+			description: req.body.description,
+			user_id: req.body.user_id
+		}).then(function () {
+			res.redirect(307, "/api/login");
+		}).catch(function (err) {
+			console.log(err);
+			res.json(err);
+		});
+	});
 };
