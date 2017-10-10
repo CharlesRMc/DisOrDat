@@ -55,8 +55,9 @@ module.exports = function (app) {
 		db.Decision.create({
 			description: req.body.description,
 			user_id: req.body.user_id
-		}).then(function () {
-			res.redirect(307, "/api/login");
+		}).then(function (dbDecision) {
+			// res.redirect(307, "/");
+			res.json(dbDecision)
 		}).catch(function (err) {
 			console.log(err);
 			res.json(err);

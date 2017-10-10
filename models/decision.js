@@ -4,15 +4,12 @@ module.exports = function (sequelize, DataTypes) {
         description: {
             type: DataTypes.STRING,
             allowNull: false
-        },
-        user_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false
         }
     },
         {
             underscored: true
-        });
+        }
+    );
 
     Decision.associate = (models) => {
         Decision.belongsTo(models.User, {
