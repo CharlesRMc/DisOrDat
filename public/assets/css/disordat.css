@@ -1,0 +1,50 @@
+body, html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+  }
+
+  body {
+   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#7eb9e5+0,8e70b2+100 */
+background: rgb(126,185,229); /* Old browsers */
+background: -moz-linear-gradient(45deg,  rgba(126,185,229,1) 0%, rgba(142,112,178,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(45deg,  rgba(126,185,229,1) 0%,rgba(142,112,178,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(45deg,  rgba(126,185,229,1) 0%,rgba(142,112,178,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7eb9e5', endColorstr='#8e70b2',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+  }
+
+.form-signin {
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+  }
+  .form-signin .form-signin-heading,
+  .form-signin .checkbox {
+    margin-bottom: 10px;
+  }
+  .form-signin .checkbox {
+    font-weight: normal;
+  }
+  .form-signin .form-control {
+    position: relative;
+    height: auto;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 10px;
+    font-size: 16px;
+  }
+  .form-signin .form-control:focus {
+    z-index: 2;
+  }
+  .form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  .form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
