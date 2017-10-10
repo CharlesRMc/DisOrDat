@@ -50,30 +50,29 @@ module.exports = function (app) {
 			});
 		}
 	});
-
+	//routes to the feed
 	app.get('/api/decision/all', (req, res) => {
+		//searches the database for all "Decisions" that include the choice model
 		db.Decision.findAll({
 			include: [{
 				model: db.Choice
 			}]
+			//prints out the JSON
 		}).then(function (dbDecision) {
 			// res.redirect(307, "/");
 			res.json(dbDecision)
+			//catches any errors
 		}).catch(function (err) {
 			console.log(err);
 			res.json(err);
 		});
 	});
-
+	//posts the decision
 	app.post("/api/decision", function (req, res) {
 		// console.log(req.body);
+		//creates the decision and their relative texts and photos
 		db.Decision.create({
 			description: req.body.description,
-<<<<<<< HEAD
-			user_id: req.body.user_id
-		}).then(function () {
-			res.redirect(307, "/");
-=======
 			user_id: req.body.user_id,
 			choices: [
 				{ text: req.body.text1, photo: req.body.photo1 },
@@ -81,10 +80,11 @@ module.exports = function (app) {
 			]
 		}, {
 			include: [ db.Choice ]
+			//returns the JSON object of the Decision object
 		}).then(function (dbDecision) {
 			// res.redirect(307, "/");
 			res.json(dbDecision)
->>>>>>> 248cf893d3efd0a88ba1b8fde4d087759d278083
+			//catches any errors
 		}).catch(function (err) {
 			console.log(err);
 			res.json(err);
