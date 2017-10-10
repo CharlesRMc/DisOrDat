@@ -56,7 +56,7 @@ module.exports = function (app) {
 			description: req.body.description,
 			user_id: req.body.user_id
 		}).then(function () {
-			res.redirect(307, "/api/login");
+			res.redirect(307, "/");
 		}).catch(function (err) {
 			console.log(err);
 			res.json(err);
