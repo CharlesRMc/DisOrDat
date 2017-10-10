@@ -1,5 +1,4 @@
 // Creating our User model
-const User = require("./user")
 module.exports = function (sequelize, DataTypes) {
     var Decision = sequelize.define("Decision", {
         description: {
@@ -12,7 +11,7 @@ module.exports = function (sequelize, DataTypes) {
         }
     });
 
-    Decision.associate = function(models) {
+    Decision.associate = (models) => {
         Decision.belongsTo(models.User, {
             foreignKey: {
                 allowNull: false
@@ -20,5 +19,5 @@ module.exports = function (sequelize, DataTypes) {
         });
     };
 
-    return User;
+    return Decision;
 };
