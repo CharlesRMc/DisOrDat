@@ -16,6 +16,7 @@ module.exports = function (sequelize, DataTypes) {
 
 	Choice.associate = function(models) {
 		Choice.belongsTo(models.Decision);
+		Choice.hasMany(models.Vote);
 	};
 
 	return Choice;

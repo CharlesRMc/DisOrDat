@@ -72,11 +72,12 @@ module.exports = function (app) {
 	app.post('/api/decision', (req, res) => {
 		db.Decision.create({
 			description: req.body.description,
-			user_id: req.body.user_id,
-			Choices: [
-				{ text: req.body.text1, photo: req.body.photo1 },
-				{ text: req.body.text2, photo: req.body.photo2 }
-			],
+			user_id: req.user.id,
+			Choices: req.body.choices,
+			// Choices: [
+			// 	{ text: req.body.text1, photo: req.body.photo1 },
+			// 	{ text: req.body.text2, photo: req.body.photo2 }
+			// ],
 			Tags: req.body.tags
 		}, {
 				include: [db.Choice, db.Tag]
@@ -86,5 +87,16 @@ module.exports = function (app) {
 				console.log(err);
 				res.json(err);
 			});
+	});
+
+	app.post('/api/vote', (req, res) => {
+		db.Vote.create({
+			choice_id: req.body.choice_id,
+			user_id: req.user.id
+		}).then((dbVote) => {
+			res.json(dbVote);
+		}).catch((err) => {
+			res.json(err);
+		});
 	});
 };
