@@ -9,19 +9,19 @@ module.exports = function (sequelize, DataTypes) {
 			type: DataTypes.STRING,
 			allowNull: true
 		}
-	},
-		{
+	}, {
+			// classMethods: {
+			// 	associate: function (models) {
+			// 		Choice.belongsTo(models.Decision);
+			// 	}
+			// },
 			underscored: true
 		}
 	);
 
-	Choice.associate = (models) => {
-		Choice.belongsTo(models.Decision, {
-			foreignKey: {
-				allowNull: false
-			}
-		});
-	};
+	Choice.associate = function(models) {
+		Choice.belongsTo(models.Decision);
+	}
 
 	return Choice;
 };

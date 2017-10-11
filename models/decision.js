@@ -5,23 +5,30 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false
         }
-    },
-        {
+    }, {
+            classMethods: {
+                associate: function (models) {
+                    Decision.belongsTo(models.User);
+                    Decision.hasMany(models.Choice);
+                }
+            },
             underscored: true
         }
     );
 
-    Decision.associate = (models) => {
-        Decision.belongsTo(models.User, {
-            foreignKey: {
-                allowNull: false
-            }
-        });
-    };
-
-    Decision.associate = function (models) {
+    Decision.associate = function(models) {
         Decision.hasMany(models.Choice);
-    };
+    }
+
+    // Decision.associate = (models) => {
+    //     Decision.belongsTo(models.User, {
+    //         foreignKey: {
+    //             allowNull: false
+    //         }
+    //     });
+
+    //     Decision.hasMany(models.Choice);
+    // };
 
     return Decision;
 };
