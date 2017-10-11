@@ -20,6 +20,7 @@ module.exports = function (sequelize, DataTypes) {
         Decision.belongsTo(models.User);
         Decision.hasMany(models.Choice);
         Decision.hasMany(models.Tag);
+        Decision.hasMany(models.Vote);
     };
 
     return Decision;

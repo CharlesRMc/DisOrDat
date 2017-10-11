@@ -43,8 +43,7 @@ module.exports = function (app) {
 		if (!req.user) {
 			// The user is not logged in, send back an empty object
 			res.json({});
-		}
-		else {
+		} else {
 			db.User.findOne({ where: { email: req.user.email } }).then((dbUser) => {
 				res.status(200).send(dbUser);
 			});
@@ -74,25 +73,21 @@ module.exports = function (app) {
 			description: req.body.description,
 			user_id: req.user.id,
 			Choices: req.body.choices,
-			// Choices: [
-			// 	{ text: req.body.text1, photo: req.body.photo1 },
-			// 	{ text: req.body.text2, photo: req.body.photo2 }
-			// ],
 			Tags: req.body.tags
-		}, {
-				include: [db.Choice, db.Tag]
-			}).then((dbDecision) => {
-				res.json(dbDecision);
-			}).catch((err) => {
-				console.log(err);
-				res.json(err);
-			});
+		}, { include: [db.Choice, db.Tag] }).then((dbDecision) => {
+			res.json(dbDecision);
+		}).catch((err) => {
+			console.log(err);
+			res.json(err);
+		});
 	});
 
 	app.post('/api/vote', (req, res) => {
 		db.Vote.create({
+			neither: req.body.neither,
 			choice_id: req.body.choice_id,
-			user_id: req.user.id
+			user_id: req.user.id,
+			decision_id: req.body.decision_id
 		}).then((dbVote) => {
 			res.json(dbVote);
 		}).catch((err) => {
