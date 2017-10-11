@@ -55,7 +55,8 @@ module.exports = function (app) {
 		db.Decision.findAll({
 			include: [
 				{ model: db.Choice },
-				{ model: db.Tag }
+				{ model: db.Tag },
+				{ model: db.Vote }
 			]
 			//prints out the JSON
 		}).then(function (dbDecision) {
