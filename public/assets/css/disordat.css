@@ -2,18 +2,162 @@ body, html {
     height: 100%;
     width: 100%;
     margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
   }
 
   body {
    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#7eb9e5+0,8e70b2+100 */
-background: rgb(126,185,229); /* Old browsers */
-background: -moz-linear-gradient(45deg,  rgba(126,185,229,1) 0%, rgba(142,112,178,1) 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(45deg,  rgba(126,185,229,1) 0%,rgba(142,112,178,1) 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(45deg,  rgba(126,185,229,1) 0%,rgba(142,112,178,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7eb9e5', endColorstr='#8e70b2',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+   background: rgb(126,185,229); /* Old browsers */
+   background: -moz-linear-gradient(-45deg,  #0095FF 0%, #AC69FF 100%); /* FF3.6-15 */
+   background: -webkit-linear-gradient(-45deg,  #0095FF 0%,#A664F7 100%); /* Chrome10-25,Safari5.1-6 */
+   background: linear-gradient(-45deg,  #0095FF 0%,#B67BFF 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7eb9e5', endColorstr='#8e70b2',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+.container {
+  overflow-x: hidden;
+}
+p {
+  font-size: 17px;
+}
+.fa {
+  color: white;
+  padding-left: 15px;
+}
+#feed-container {
+  
+  background-color: white;
+  margin-top: -20px;
+  width: 85vw;
+}
+.header-text {
+  font-size: 10vw;
+}
+.user-thumbnail {
+  max-width: 50px;
+  background-color: white;
+  padding: 3px;
+  display: inline-block;
+}
 
-  }
+/* NAV NAV NAV NAV NAV */
+#nav-custom {
+  background: rgb(126,185,229); /* Old browsers */
+  background: -moz-linear-gradient(-45deg,  #0095FF 0%, #AC69FF 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg,  #0095FF 0%,#A664F7 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(-45deg,  #0095FF 0%,#B67BFF 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7eb9e5', endColorstr='#8e70b2',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  height: 10vh;  
+  border-color: transparent;
+  -webkit-box-shadow: 0px 10px 25px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 10px 25px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 10px 25px 0px rgba(0,0,0,0.75);
+} 
+#logo-text {
+  color: white;
+  margin-top:2vh;
+}
+#nav-icons {
+  text-align: right;
+  margin-top:3vh;
+}
+#user-profile-thumbnail {
+  margin-top: 1vh;
+}
 
+/* DECISION SECTION ---  DECISION SECTION */
+.decision-details {
+  margin-top: 15px;
+}
+#decision-timestamp {
+  text-align: right;
+  color: #939393;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+.decision-user-thumb{
+  padding: 1vw;
+  max-width: 15vw;
+}
+.user-first-name {
+  font-weight: bold;
+  font-size: 20px;
+}
+.decision-text {
+  margin-left: -15px;
+  padding-right: 0px;
+}
+.user-decision-text {
+  font-style: italic;
+  font-size: 15px;
+}
+.tag-text {
+  color: #939393;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+.decision-photo {
+  -webkit-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.75);
+  margin-bottom: 15px;
+}
+.dis-vote, .dat-vote, .neither-vote {
+  max-width: 12vw;
+}
+.neither-vote {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.vote-stats {
+  margin-top: 15px;
+  color: #939393;
+  font-size: 13px;
+}
+.vote-stats-numbers {
+  color: #363636;
+  font-size: 13px;
+}
+.comment-divider {
+  margin-top: 5px;
+  color: #000000;
+  height: 10px;
+	border: 0;
+	box-shadow: 0 10px 10px -10px #8c8b8b inset;
+}
+.decision-comments {
+  margin-top: -10px;
+}
+.this-user-thumb {
+  max-width: 30px;
+  background-color: white;
+  display: inline-block;
+}
+.write-comment {
+  margin-left: -15px;
+}
+.form-control {
+  color: #A5A5A5;
+}
+.post-comment-button {
+  margin-left: -15px;
+}
+.comment-user-thumb {
+ 
+}
+.comment-user-name, .comment-text, .comment-user-text, .comment-timestamp {
+  font-size: 12px;
+}
+.comment-user-text {
+  color: #6B6B6B; 
+}
+.comment-timestamp {
+  text-align: right;
+  color: #939393;
+  text-transform: uppercase;
+}
+
+/* FORMS FORMS FORMS FORMS FORMS */
 .form-signin {
     max-width: 330px;
     padding: 15px;
