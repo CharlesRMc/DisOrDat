@@ -83,6 +83,22 @@ module.exports = function (app) {
 		});
 	});
 
+	app.get('/api/vote/user', (req, res) => {
+		db.Vote.findAll({
+			where: {
+				user_id: req.user.id
+			},
+			include: [
+				{ model: db.Choice },
+				{ model: db.Decision }
+			]
+		}).then((dbVote) => {
+			res.json(dbVote);
+		}).catch((err) => {
+			res.json(err);
+		});
+	})
+
 	app.post('/api/vote', (req, res) => {
 		db.Vote.create({
 			neither: req.body.neither,
