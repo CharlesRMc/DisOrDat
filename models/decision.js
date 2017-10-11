@@ -21,6 +21,7 @@ module.exports = function (sequelize, DataTypes) {
         Decision.hasMany(models.Choice);
         Decision.hasMany(models.Tag);
         Decision.hasMany(models.Vote);
+        Decision.hasMany(models.Comment);
     };
 
     return Decision;

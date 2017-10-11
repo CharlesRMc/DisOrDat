@@ -56,7 +56,8 @@ module.exports = function (app) {
 			include: [
 				{ model: db.Choice },
 				{ model: db.Tag },
-				{ model: db.Vote }
+				{ model: db.Vote },
+				{ model: db.Comment }
 			]
 			//prints out the JSON
 		}).then(function (dbDecision) {
@@ -79,6 +80,18 @@ module.exports = function (app) {
 			res.json(dbDecision);
 		}).catch((err) => {
 			console.log(err);
+			res.json(err);
+		});
+	});
+
+	app.post('/api/comment', (req, res) => {
+		db.Comment.create({
+			text: req.body.text,
+			user_id: req.user.id,
+			decision_id: req.body.decision_id
+		}).then((dbComment) => {
+			res.json(dbComment);
+		}).catch((err) => {
 			res.json(err);
 		});
 	});
