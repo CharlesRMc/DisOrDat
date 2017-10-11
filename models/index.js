@@ -23,7 +23,7 @@ fs
 		var model = sequelize['import'](path.join(__dirname, file));
 		db[model.name] = model;
 	});
-
+//FOR Loop that matches the model name to the db
 Object.keys(db).forEach(function (modelName) {
 	if (db[modelName].associate) {
 		db[modelName].associate(db);
