@@ -1,5 +1,5 @@
 // Creating our User model
-module.exports = function (sequelize, DataTypes) {
+module.exports = (sequelize, DataTypes) => {
 	// creating model Choice
 	var Choice = sequelize.define("Choice", {
 		//creating text object
@@ -17,7 +17,7 @@ module.exports = function (sequelize, DataTypes) {
 		}
 	);
 
-	Choice.associate = function(models) {
+	Choice.associate = (models) => {
 		Choice.belongsTo(models.Decision);
 		Choice.hasMany(models.Vote, { onDelete: 'CASCADE' });
 	};

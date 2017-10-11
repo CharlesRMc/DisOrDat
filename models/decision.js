@@ -1,5 +1,5 @@
 // Creating our User model
-module.exports = function (sequelize, DataTypes) {
+module.exports = (sequelize, DataTypes) => {
     //Creates a Decision table with columns description and underscores the id.
     var Decision = sequelize.define("Decision", {
         description: {
@@ -8,7 +8,7 @@ module.exports = function (sequelize, DataTypes) {
         }
     }, {
             classMethods: {
-                associate: function (models) {
+                associate: (models) => {
                     Decision.belongsTo(models.User);
                     Decision.hasMany(models.Choice);
                 }
@@ -17,7 +17,7 @@ module.exports = function (sequelize, DataTypes) {
         }
     );
 
-    Decision.associate = function(models) {
+    Decision.associate = (models) => {
         Decision.belongsTo(models.User);
         Decision.hasMany(models.Choice, { onDelete: 'CASCADE' });
         Decision.hasMany(models.Tag);

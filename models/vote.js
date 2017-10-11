@@ -1,5 +1,5 @@
 // Creating our User model
-module.exports = function (sequelize, DataTypes) {
+module.exports = (sequelize, DataTypes) => {
 	var Vote = sequelize.define("Vote", {
 		neither: {
 			type: DataTypes.BOOLEAN,
@@ -8,14 +8,14 @@ module.exports = function (sequelize, DataTypes) {
 		user_id: {
 			type: DataTypes.INTEGER,
 			allowNull: false,
-			unique: true
+			// unique: true
 		}
 	}, {
 			underscored: true
 		}
 	);
 
-	Vote.associate = function (models) {
+	Vote.associate = (models) => {
 		Vote.belongsTo(models.Choice);
 		Vote.belongsTo(models.User);
 		Vote.belongsTo(models.Decision);
