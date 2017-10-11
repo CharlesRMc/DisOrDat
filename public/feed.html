@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Keep these three meta tags on top - do not alter -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- end important meta -->
+    <!--start other meta-->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+    <!--end other meta-->
+    <!-- Latest compiled and minified CSS for Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/disordat.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-default navbar-static-top" id="nav-custom">
+        <div class="container" id="nav-container">
+            <div class="row" id="nav-row">
+                <div class="col-md-4 col-sm-4 col-xs-4" id="user-profile-thumbnail">
+                    <img class="img-responsive user-thumbnail" src="assets/img/charlie_thumb.jpg" />
+                </div>
+                <!--end user-profile-thumbnail-->
+                <div class="col-md-4 col-sm-4 col-xs-4" id="logo-text">
+                    <h4 class="text-center">DIS OR DAT</h4>
+                </div>
+                <!--end logo text-->
+                <div class="col-md-4 col-sm-4 col-xs-4" id="nav-icons">
+                    <i class="fa fa-search fa-2x"></i>
+                    <i class="fa fa-pencil fa-2x"></i>
+                </div>
+                <!--end nav icons-->
+            </div>
+            <!--end row-->
+        </div>
+        <!-- end container-->
+    </nav>
+    <!-- end nav-->
+    <div class="container" id="feed-container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <h1 class="header-text">DECIDE</h1>
+            </div>
+        </div>
+        <section class="decision-details">
+            <div class="row">
+                <div class="col-md-3 col-sm-3 col-xs-3">
+                    <img class="img-responsive decision-user-thumb" src="assets/img/charlie_thumb.jpg" />
+                </div>
+                <div class="col-md-9 col-sm-9 col-xs-9 decision-text">
+                    <p><span class="user-first-name">Charlie</span> asked: <span class="user-decision-text">Where should I go on vacation next month? Hawaii or South Beach?</span></p>
+                    <p id="decision-timestamp"><span>4 HOURS AGO</span></p>
+                </div>
+            </div>
+            <!--end row-->
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <p class="tag-text">#Hawaii, #Travel, #Vacation, #YOLO, #Beachin</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                    <img class="img-responsive decision-photo center-block" src="http://www.escoffier.edu/wp-content/uploads/hawaii-has-many-unique-culinary-offerings_1028_40104940_1_14117254_500.jpg" />
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6">
+                    <img class="img-responsive decision-photo decision-photo" src="https://i.pinimg.com/736x/a1/cf/4e/a1cf4e9ea205f7f2ec29f0b853c284df--south-beach-south-florida.jpg" />
+                </div>
+            </div>
+            <!-- end row -->
+            <div class="row">
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                    <img class="dis-vote center-block" src="assets/img/Dis.png" />
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                    <img class="neither-vote center-block" src="assets/img/poomoji.png" />
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                    <img class="dat-vote center-block" src="assets/img/Dat.png" />
+                </div>
+            </div>
+            <!-- end row -->
+            <div class="row vote-stats">
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                    <p class="dis-text text-center">DIS</p>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                    <p class="dis-text text-center">NEITHER</p>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                    <p class="dis-text text-center">DAT</p>
+                </div>
+            </div>
+            <!-- end row -->
+            <div class="row vote-stats-numbers">
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                    <p class="dis-text text-center">204</p>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                    <p class="dis-text text-center">7</p>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-4">
+                    <p class="dis-text text-center">76</p>
+                </div>
+            </div>
+            <!-- end row -->
+            <hr class="comment-divider">
+        </section>
+        <section class="decision-comments">
+            <div class="row">
+                <div class="col-md-2 col-sm-2 col-xs-2">
+                    <img class="img-responsive this-user-thumb" src="assets/img/charlie_thumb.jpg" />
+                </div>
+                <div class="col-md-8 col-sm-8 col-xs-8 write-comment">
+                    <!-- GET ROUTE INFO FROM JAKIE -->
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="post-comment" value="post a comment">
+                    </div>
+                    <!-- end form group-->
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-2 post-comment-button">
+                    <button type="button" class="btn btn-primary">Post</button>
+                </div>
+            </div>
+            <!-- end row for posting new comment-->
+
+            <!--this is a single comment-->
+            <div class="row" id="user-comments">
+                <div class="col-md-3 col-sm-3 col-xs-3">
+                    <img class="img-responsive comment-user-thumb" src="https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAA0LAAAAJGM0YTcyMzEwLWE4NTUtNDYyMy04YzhmLWQ4Y2I5YWE5OTUzYw.jpg" />
+                </div>
+                <div class="col-md-9 col-sm-9 col-xs-9 ">
+                    <p class="comment-text"><span class="comment-user-name">Jakie Rice</span> commented: <br><span class="comment-user-text">You suck</span></p>
+                    <p class="comment-timestamp"><span>4 HOURS AGO</span></p>
+                </div>
+            </div>
+            <!--this is a single comment-->
+            <div class="row" id="user-comments">
+                    <div class="col-md-3 col-sm-3 col-xs-3">
+                        <img class="img-responsive comment-user-thumb" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAx8AAAAJGJkNWUyNTZmLWY1ODctNDA4My04NzU2LWIxYjJjNTE5MmI3Zg.jpg" />
+                    </div>
+                    <div class="col-md-9 col-sm-9 col-xs-9">
+                        <p class="comment-text"><span class="comment-user-name">Kathryn Herod</span> commented: <br><span class="comment-user-text">I LOVE Hawaii!!! Go there!</span></p>
+                        <p class="comment-timestamp"><span>2 HOURS AGO</span></p>
+                    </div>
+                </div>
+        </section>
+    </div>
+    <!--end container-->
+    <!-- start scripts-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/login.js"></script>
+</body>
+
+</html>
