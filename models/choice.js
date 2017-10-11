@@ -12,19 +12,14 @@ module.exports = function (sequelize, DataTypes) {
 			type: DataTypes.STRING,
 			allowNull: true
 		}
-	},
-		{
-			//instead of camel case will outout user_id
+	}, {
 			underscored: true
 		}
 	);
-	//saying that the choices are subclasses of the Decision model
-	Choice.associate = (models) => {
-		Choice.belongsTo(models.Decision, {
-			foreignKey: {
-				allowNull: false
-			}
-		});
+
+	Choice.associate = function(models) {
+		Choice.belongsTo(models.Decision);
+		Choice.hasMany(models.Vote, { onDelete: 'CASCADE' });
 	};
 
 	return Choice;

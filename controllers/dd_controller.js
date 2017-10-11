@@ -43,20 +43,22 @@ module.exports = function (app) {
 		if (!req.user) {
 			// The user is not logged in, send back an empty object
 			res.json({});
-		}
-		else {
-			db.User.findOne({ where: {email: req.user.email}}).then((dbUser) => {
+		} else {
+			db.User.findOne({ where: { email: req.user.email } }).then((dbUser) => {
 				res.status(200).send(dbUser);
 			});
 		}
 	});
-	//routes to the feed
+
 	app.get('/api/decision/all', (req, res) => {
 		//searches the database for all "Decisions" that include the choice model
 		db.Decision.findAll({
-			include: [{
-				model: db.Choice
-			}]
+			include: [
+				{ model: db.Choice },
+				{ model: db.Tag },
+				{ model: db.Vote },
+				{ model: db.Comment }
+			]
 			//prints out the JSON
 		}).then(function (dbDecision) {
 			// res.redirect(307, "/");
@@ -67,42 +69,63 @@ module.exports = function (app) {
 			res.json(err);
 		});
 	});
-	//posts the decision
-	app.post("/api/decision", function (req, res) {
-		// console.log(req.body);
-		//creates the decision and their relative texts and photos
+
+	app.post('/api/decision', (req, res) => {
 		db.Decision.create({
 			description: req.body.description,
-			user_id: req.body.user_id,
-			choices: [
-				{ text: req.body.text1, photo: req.body.photo1 },
-				{ text: req.body.text2, photo: req.body.photo2 }
-			]
-		}, {
-			include: [ db.Choice ]
-			//returns the JSON object of the Decision object
-		}).then(function (dbDecision) {
-			// res.redirect(307, "/");
-			res.json(dbDecision)
-			//catches any errors
-		}).catch(function (err) {
+			user_id: req.user.id,
+			Choices: req.body.choices,
+			Tags: req.body.tags
+		}, { include: [db.Choice, db.Tag] }).then((dbDecision) => {
+			res.json(dbDecision);
+		}).catch((err) => {
 			console.log(err);
 			res.json(err);
 		});
 	});
 
-	// app.post("/api/choice", function (req, res) {
-	// 	console.log(req.body);
-	// 	db.Choice.create({
-	// 		text: req.body.text,
-	// 		photo: req.body.photo,
-	// 		decision_id: req.body.decision_id
-	// 	}).then(function (dbChoice) {
-	// 		// res.redirect(307, "/");
-	// 		res.json(dbChoice)
-	// 	}).catch(function (err) {
-	// 		console.log(err);
-	// 		res.json(err);
-	// 	});
+	app.post('/api/comment', (req, res) => {
+		db.Comment.create({
+			text: req.body.text,
+			user_id: req.user.id,
+			decision_id: req.body.decision_id
+		}).then((dbComment) => {
+			res.json(dbComment);
+		}).catch((err) => {
+			res.json(err);
+		});
+	});
+
+	app.get('/api/vote/user', (req, res) => {
+		db.Vote.findAll({
+			where: {
+				user_id: req.user.id
+			},
+			include: [
+				{ model: db.Choice },
+				{ model: db.Decision }
+			]
+		}).then((dbVote) => {
+			res.json(dbVote);
+		}).catch((err) => {
+			res.json(err);
+		});
+	})
+
+	app.post('/api/vote', (req, res) => {
+		db.Vote.create({
+			neither: req.body.neither,
+			choice_id: req.body.choice_id,
+			user_id: req.user.id,
+			decision_id: req.body.decision_id
+		}).then((dbVote) => {
+			res.json(dbVote);
+		}).catch((err) => {
+			res.json(err);
+		});
+	});
+
+	// app.delete('/api/vote', (req, res) => {
+
 	// });
 };
