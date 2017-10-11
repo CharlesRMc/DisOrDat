@@ -48,7 +48,7 @@ module.exports = function (sequelize, DataTypes) {
 	});
 
 	User.associate = function (models) {
-		User.hasMany(models.Decision);
+		User.hasMany(models.Decision, { onDelete: 'CASCADE' });
 		User.hasMany(models.Vote);
 	};
 

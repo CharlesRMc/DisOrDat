@@ -18,10 +18,10 @@ module.exports = function (sequelize, DataTypes) {
 
     Decision.associate = function(models) {
         Decision.belongsTo(models.User);
-        Decision.hasMany(models.Choice);
+        Decision.hasMany(models.Choice, { onDelete: 'CASCADE' });
         Decision.hasMany(models.Tag);
-        Decision.hasMany(models.Vote);
-        Decision.hasMany(models.Comment);
+        Decision.hasMany(models.Vote, { onDelete: 'CASCADE' });
+        Decision.hasMany(models.Comment, { onDelete: 'CASCADE' });
     };
 
     return Decision;
