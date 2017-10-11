@@ -54,9 +54,10 @@ module.exports = function (app) {
 	app.get('/api/decision/all', (req, res) => {
 		//searches the database for all "Decisions" that include the choice model
 		db.Decision.findAll({
-			include: [{
-				model: db.Choice
-			}]
+			include: [
+				{ model: db.Choice },
+				{ model: db.Tag }
+			]
 			//prints out the JSON
 		}).then(function (dbDecision) {
 			// res.redirect(307, "/");
@@ -75,14 +76,15 @@ module.exports = function (app) {
 			Choices: [
 				{ text: req.body.text1, photo: req.body.photo1 },
 				{ text: req.body.text2, photo: req.body.photo2 }
-			]
+			],
+			Tags: req.body.tags
 		}, {
-			include: [db.Choice]
-		}).then((dbDecision) => {
-			res.json(dbDecision);
-		}).catch((err) => {
-			console.log(err);
-			res.json(err);
-		});
+				include: [db.Choice, db.Tag]
+			}).then((dbDecision) => {
+				res.json(dbDecision);
+			}).catch((err) => {
+				console.log(err);
+				res.json(err);
+			});
 	});
 };

@@ -17,18 +17,10 @@ module.exports = function (sequelize, DataTypes) {
     );
 
     Decision.associate = function(models) {
+        Decision.belongsTo(models.User);
         Decision.hasMany(models.Choice);
-    }
-
-    // Decision.associate = (models) => {
-    //     Decision.belongsTo(models.User, {
-    //         foreignKey: {
-    //             allowNull: false
-    //         }
-    //     });
-
-    //     Decision.hasMany(models.Choice);
-    // };
+        Decision.hasMany(models.Tag);
+    };
 
     return Decision;
 };

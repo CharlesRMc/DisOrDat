@@ -10,18 +10,13 @@ module.exports = function (sequelize, DataTypes) {
 			allowNull: true
 		}
 	}, {
-			// classMethods: {
-			// 	associate: function (models) {
-			// 		Choice.belongsTo(models.Decision);
-			// 	}
-			// },
 			underscored: true
 		}
 	);
 
 	Choice.associate = function(models) {
 		Choice.belongsTo(models.Decision);
-	}
+	};
 
 	return Choice;
 };
