@@ -1,0 +1,101 @@
+<div class="masonry-css">
+	{{#each decisions}}
+	<div class="masonry-css-item">
+		<div class="callout">
+			<!-- user photo and decision text -->
+			<div class="grid-x grid-margin-x align-justify">
+				<div class="small-3 cell">
+					<img class="img-responsive decision-user-thumb" src="assets/img/charlie_thumb.jpg" />
+				</div>
+				<div class="small-9 decision-text cell">
+					<p><span class="user-first-name">{{this.User.user_name}}</span> asked: <span class="user-decision-text">{{this.description}}</span></p>
+					<p id="decision-timestamp"><span>4 HOURS AGO</span></p>
+				</div>
+			</div>
+			<!-- tags -->
+			<div class="grid-x">
+				<div class="small-12 cell">
+					<p class="tag-text">
+						{{#each this.Tags}} {{this.tag_name}} {{/each}}
+					</p>
+				</div>
+			</div>
+			<!-- choices photos -->
+
+			<div class="grid-x align-justify decision-photos">
+				<div class="small-6 cell decision-photo-left">
+					<img class="img-responsive decision-photo" src="{{this.Choices.[0].photo}}" />
+				</div>
+				<div class="small-6 cell decision-photo-right">
+					<img class="img-responsive decision-photo" src="{{this.Choices.[1].photo}}" />
+				</div>
+			</div>
+			<!-- choice buttons -->
+			<div class="grid-x">
+				<div class="small-4 cell">
+					<img class="dis-vote float-center choice-image" src="assets/img/Dis.png" />
+				</div>
+				<div class="small-4 cell">
+					<img class="neither-vote float-center choice-image" src="assets/img/poomoji.png" />
+				</div>
+				<div class="small-4 cell">
+					<img class="dat-vote float-center choice-image" src="assets/img/Dat.png" />
+				</div>
+			</div>
+			<!-- choice text -->
+			<div class="grid-x">
+				<div class="small-4 cell">
+					<p class="choice-text">DIS</p>
+				</div>
+				<div class="small-4 cell">
+					<p class="choice-text">NEITHER</p>
+				</div>
+				<div class="small-4 cell">
+					<p class="choice-text">DATE</p>
+				</div>
+			</div>
+			<!-- choice count -->
+			<div class="grid-x">
+				<div class="small-4">
+					<p class="choice-count">204</p>
+				</div>
+				<div class="small-4">
+					<p class="choice-count">7</p>
+				</div>
+				<div class="small-4">
+					<p class="choice-count">76</p>
+				</div>
+			</div>
+			<!-- make comment section -->
+			<div class="grid-x">
+				<div class="small-2 cell">
+					<img class="img-responsive this-user-thumb" src="assets/img/charlie_thumb.jpg" />
+				</div>
+				<div class="small-8 cell write-comment">
+					<div class="form-group">
+						<input type="text" class="form-control" id="post-comment" value="post a comment">
+					</div>
+				</div>
+				<div class="small-2 cell">
+					<button type="button" class="button">Post</button>
+				</div>
+			</div>
+			<!-- comments -->
+			{{#each this.Comments}}
+			<div class="grid-x grid-margin-x" id="user-comments">
+				<div class="small-3 cell">
+					<img class="img-responsive comment-user-thumb" src="{{this.User.profile_pic}}"
+					/>
+				</div>
+				<div class="small-9 cell">
+					<p class="comment-text">
+						<span class="comment-user-name">{{this.User.user_name}}</span> commented: <br><span class="comment-user-text">{{this.text}}</span>
+					</p>
+					<p class="comment-timestamp"><span>4 HOURS AGO</span></p>
+				</div>
+			</div>
+			{{/each}}
+		</div>
+	</div>
+	{{/each}}
+</div>
