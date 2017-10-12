@@ -16,6 +16,48 @@ handlebars
 ## Authors
 Jakie Rice - jakie.rice@gmail.com
 Kathryn Herod - codingkat7@gmail.com
+    Node.js
+
+
+    bcrypt-nodejs: 0.0.,
+
+
+    body-parser: ^1.15.2,
+
+
+    express: ^4.14.0,
+
+
+    express-session: ^1.14.2,
+
+
+    mysql2: ^1.3.6,
+
+
+    passport": ^0.3.2,
+
+
+    passport-local: ^1.0.0,
+
+
+    sequelize": ^4.3.1,
+
+
+    express-handlebars: ^3.0.0,
+
+
+    handlebars.moment: ^1.0.4,
+
+
+    method-override: ^2.3.10
+
+## Authors
+Jakie Rice - jakie.rice@gmail.com
+
+
+Kathryn Herod - codingkat7@gmail.com
+
+
 Charles McDowell - charlesmcdowellwork@gmail.com
 
 ## Acknowledgements
