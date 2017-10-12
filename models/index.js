@@ -25,6 +25,9 @@ fs
     });
 //FOR Loop that matches the model name to the db
 Object.keys(db).forEach((modelName) => {
+	if (db[modelName].associate) {
+		db[modelName].associate(db);
+	}
     if (db[modelName].associate) {
         db[modelName].associate(db);
     }
