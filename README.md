@@ -12,50 +12,37 @@ In today’s ever growing peer influence, we here at Dis or Dat decided to kick 
 ## Built With
     Node.js
 
-
     bcrypt-nodejs: 0.0.,
-
 
     body-parser: ^1.15.2,
 
-
     express: ^4.14.0,
-
 
     express-session: ^1.14.2,
 
-
     mysql2: ^1.3.6,
-
 
     passport": ^0.3.2,
 
-
     passport-local: ^1.0.0,
-
 
     sequelize": ^4.3.1,
 
-
     express-handlebars: ^3.0.0,
 
-
     handlebars.moment: ^1.0.4,
-
 
     method-override: ^2.3.10
 
 ## Authors
 Jakie Rice - jakie.rice@gmail.com
 
-
 Kathryn Herod - codingkat7@gmail.com
-
 
 Charles McDowell - charlesmcdowellwork@gmail.com
 
 ## Acknowledgements
-Thank you to all who have contributed to disordat, the countless hours our team has spent away from family and friends to ensure this app is everything we foresaw from the beggining. The dedication has been truly overwhelming, and I can not think of the words to express my gratitude to them. Hopefully our users are able to enjoy this app to it's full potential.
+Thank you to all who have contributed to disordat. Our team has spent countless hours away from family and friends to ensure this app is everything we foresaw from the beggining. The dedication has been truly overwhelming, and I cannot think of the words to express my gratitude to them. Hopefully our users are able to enjoy this app to it's full potential.
 
 Thanks,
 The disordat team
