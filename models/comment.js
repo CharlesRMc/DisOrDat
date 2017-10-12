@@ -1,5 +1,5 @@
 // Creating our User model
-module.exports = function (sequelize, DataTypes) {
+module.exports = (sequelize, DataTypes) => {
 	var Comment = sequelize.define("Comment", {
 		text: {
 			type: DataTypes.STRING,
@@ -10,7 +10,7 @@ module.exports = function (sequelize, DataTypes) {
 		}
 	);
 
-	Comment.associate = function (models) {
+	Comment.associate = (models) => {
 		Comment.belongsTo(models.Decision, { onDelete: 'CASCADE' });
 		Comment.belongsTo(models.User, { onDelete: 'CASCADE' });
 	};

@@ -1,5 +1,5 @@
 // Creating our User model
-module.exports = function (sequelize, DataTypes) {
+module.exports = (sequelize, DataTypes) => {
 	var Tag = sequelize.define("Tag", {
 		tag_name: {
 			type: DataTypes.STRING,
@@ -10,7 +10,7 @@ module.exports = function (sequelize, DataTypes) {
 		}
 	);
 
-	Tag.associate = function (models) {
+	Tag.associate = (models) => {
 		Tag.belongsToMany(models.Decision, {through: 'decision_id'});
 	};
 
