@@ -59,6 +59,8 @@ p {
 #nav-icons {
   text-align: right;
   margin-top:3vh;
+  list-style: none;
+  display: inline-block;
 }
 #user-profile-thumbnail {
   margin-top: 1vh;
@@ -80,7 +82,7 @@ p {
 .decision-user-thumb{
   /* padding: 1vw; */
   /* max-width: 15vw; */
-    -webkit-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.75);
   box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.75);
 }
@@ -186,6 +188,13 @@ p {
   text-align: right;
   color: #939393;
   text-transform: uppercase;
+}
+
+/* POST */
+.decision-user-thumb-post {
+  -webkit-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.75);  
 }
 
 /* FORMS FORMS FORMS FORMS FORMS */
