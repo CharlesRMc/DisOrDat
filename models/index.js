@@ -16,14 +16,15 @@ if (config.use_env_variable) {
 
 fs
 	.readdirSync(__dirname)
-	.filter(function (file) {
+	.filter((file) => {
 		return (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js');
 	})
-	.forEach(function (file) {
+	.forEach((file) => {
 		var model = sequelize['import'](path.join(__dirname, file));
 		db[model.name] = model;
 	});
-
+//FOR Loop that matches the model name to the db
+Object.keys(db).forEach((modelName) => {
 Object.keys(db).forEach(function (modelName) {
 	if (db[modelName].associate) {
 		db[modelName].associate(db);
