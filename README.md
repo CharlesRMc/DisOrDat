@@ -10,12 +10,6 @@ In today’s ever growing peer influence, we here at Dis or Dat decided to kick 
 2. Upon logging in the user will be redirected to the feed page, showing a feed of recently posted decisions to vote on. From there they can navigate to the "Profile page" to create their own decisions and see list of previous decisions they have created as well as preivous votes they have cast.
 
 ## Built With
-Node.js
-handlebars
-
-## Authors
-Jakie Rice - jakie.rice@gmail.com
-Kathryn Herod - codingkat7@gmail.com
     Node.js
 
     bcrypt-nodejs: 0.0.,
