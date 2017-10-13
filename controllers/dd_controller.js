@@ -3,6 +3,7 @@ const express = require('express');
 const router = express.Router();
 const db = require('../models');
 const passport = require('../config/passport');
+var app = express();
 
 // Using the passport.authenticate middleware with our local strategy.
 // If the user has valid login credentials, send them to the members page.
@@ -39,17 +40,17 @@ const passport = require('../config/passport');
 // 	res.redirect('/');
 // });
 
-// Route for getting some data about our user to be used client side
-// app.get('/api/profile', (req, res) => {
-// 	if (!req.user) {
-// 		// The user is not logged in, send back an empty object
-// 		res.json({});
-// 	} else {
-// 		db.User.findOne({ where: { email: req.user.email } }).then((dbUser) => {
-// 			res.status(200).send(dbUser);
-// 		});
-// 	}
-// });
+//Route for getting some data about our user to be used client side
+app.get('/profile', (req, res) => {
+	if (!req.user) {
+		// The user is not logged in, send back an empty object
+		res.json({});
+	} else {
+		db.User.findOne({ where: { email: req.user.email } }).then((dbUser) => {
+			res.status(200).send(dbUser);
+		});
+	}
+});
 
 router.get('/feed', (req, res) => {
 	//searches the database for all "Decisions" that include the choice model
@@ -185,17 +186,17 @@ module.exports = router;
 // 		res.redirect('/');
 // 	});
 
-// 	// Route for getting some data about our user to be used client side
-// 	app.get('/api/profile', (req, res) => {
-// 		if (!req.user) {
-// 			// The user is not logged in, send back an empty object
-// 			res.json({});
-// 		} else {
-// 			db.User.findOne({ where: { email: req.user.email } }).then((dbUser) => {
-// 				res.status(200).send(dbUser);
-// 			});
-// 		}
-// 	});
+// Route for getting some data about our user to be used client side
+	app.get('/profile', (req, res) => {
+		if (!req.user) {
+			// The user is not logged in, send back an empty object
+			res.json({});
+		} else {
+			db.User.findOne({ where: { email: req.user.email } }).then((dbUser) => {
+				res.status(200).send(dbUser);
+			});
+		}
+	});
 
 // 	app.get('/api/decision/all', (req, res) => {
 // 		//searches the database for all "Decisions" that include the choice model

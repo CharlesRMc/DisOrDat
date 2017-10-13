@@ -1,6 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!Doctype html>
+<html class="no-js" lang="en">
 <head>
     <!-- Keep these three meta tags on top - do not alter -->
     <meta charset="utf-8">
@@ -10,87 +9,121 @@
     <!--start other meta-->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
+    <link rel="icon" href="assets/img/favicon.ico">
     <!--end other meta-->
     <!-- Custom CSS -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <!-- Compressed CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css" crossorigin="anonymous" />
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/disordat.css">
-    <link rel="stylesheet" href="assets/css/vendor/masonry.css">
-    <link rel="stylesheet" href="assets/css/vendor/accordion-flydown.css">
+    <link href="css/style.css" rel="stylesheet" />
+    <script src="js/vendor/modernizr.js"></script>
 </head>
-
 <body>
-    <!-- Nav bar -->
-    <div class="grid-x align-center" data-sticky-container>
-        <div class="sticky small-12 cell" data-sticky data-margin-top="0" id="nav-custom">
-            <div class="grid-x grid-padding-x" id="nav-row">
-                <div class="small-4 cell" id="user-profile-thumbnail">
-                    <img class="img-responsive user-thumbnail" src="assets/img/charlie_thumb.jpg" />
-                </div>
-                <!--end user-profile-thumbnail-->
-                <div class="small-4 cell" id="logo-text">
-                    <h4 class="text-center">DIS OR DAT</h4>
-                </div>
-                <!--end logo text-->
-                <div class="small-4 cell" id="nav-icons">
-                    <li class="mega-menu">
-                        <i class="fa fa-search fa-2x"></i>
-                        <a data-toggle="mega-menu" href="#"><i class="fa fa-pencil fa-2x"></i></a>
-                        <div class="dropdown-pane bottom" id="mega-menu" data-dropdown data-options="closeOnClick:true;  vOffset:11">
-                            <div class="decision-box">
-                                <div class="row collapse expanded">
-                                    <div class="decision-box-form-section">
-                                        <div class="grid-x grid-margin-x align-justify">
-                                            <div class="small-3 cell">
-                                                <img class="img-responsive decision-user-thumb-post" src="assets/img/charlie_thumb.jpg" />
-                                            </div>
-                                            <div class="small-9 decision-text cell">
-                                                <input class="decision-box-input decision-question" type="text" name="decision-question" placeholder="ASK YOUR FRIENDS A QUESTION" />
-                                                <p class="help-text">(add tags by using # before the word)</p>
-                                            </div>
-                                        </div>
-                                        <div class="grid-x align-justify">
-                                            <div class="small-6 cell decision-box-input-left">
-                                                <input class="decision-box-input" type="text" name="decision-choice-1-name" placeholder="CHOICE 1 NAME" />
-                                                <input class="decision-box-input" type="text" name="decision-choice-1-url" placeholder="PHOTO URL FOR CHOICE 1" />
-                                            </div>
-                                            <div class="small-6 cell decision-box-input-right">
-                                                <input class="decision-box-input" type="text" name="decision-choice-2-name" placeholder="CHOICE 2 NAME" />
-                                                <input class="decision-box-input" type="text" name="decision-choice-2-url" placeholder="PHOTO URL FOR CHOICE 2" />
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="small-6 small-centered text-center columns">
-                                                <input class="decision-box-submit-button" type="submit" name="decision_submit" value="POST" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+    <div class="main">
+        <div id="content">
+            <div class="row">
+                <div class="small-12 medium-5 large-5 columns">
+                    <div id="countdowns">
+                        <div id="intro">
+                            <img src="img/logo.png" id="logo" alt="logo" />
+                            <h4>The Board Walk</h4>
+                            <ul id="countdown">
+                                <li class="col-md-3">
+                                    <p><span class="days">00</span></p>
+                                    <p class="textDays">Days</p>
+                                </li>
+                                <li class="col-md-3">
+                                    <p><span class="hours">00</span></p>
+                                    <p class="textHours">Hours</p>
+                                </li>
+                                <li class="col-md-3">
+                                    <p><span class="minutes">00</span></p>
+                                    <p class="textMinutes">Minutes</p>
+                                </li>
+                                <li class="col-md-3">
+                                    <p><span class="seconds">00</span></p>
+                                    <p class="textSeconds">Seconds</p>
+                                </li>
+                            </ul>
+                            <div class="clearfix"></div>
+                            <div id="details">
+                                <h5>Foundation summer freebie </h5>
+                                <ul>
+                                    <li><span>Foundationdeck is an elite platform for foundation developers to sell premium quality foundation themes.</span></li>
+                                    <li><span>Our aim is to be the ideal foundation marketplace across the globe.</span></li>
+                                    <li><span>We are fun & hard-working startup that is making strides in the themes marketplace.</span></li>
+                                </ul>
                             </div>
                         </div>
-                        <!-- end row expanded-->
+                    </div>
+                    <div id="arrow">
+                        <img src="img/Arrow.png" alt="arrow up" />
+                    </div>
                 </div>
-                </li>
+                <div class="small-12 medium-7 large-7 columns">
+                    <div id="coming-content">
+                        <h4>Subscribe Now</h4>
+                        <input type="text" placeholder="Email" />
+                        <input type="text" placeholder="Name" />
+                        <input type="text" placeholder="Organization" />
+                        <input type="button" class="button radius tiny custom-btn" value="Subscribe" />
+                        <div id="social">
+                            <img src="img/Facebook.png" alt="facebook" />
+                            <img src="img/Pinterest.png" alt="pinterest" />
+                            <img src="img/GooglePlus.png" alt="googeplus" />
+                        </div>
+                    </div>
+                </div>
             </div>
-            <!--end nav icons-->
+            <span style="color: #fff; position: relative; position: relative; top: 10px;">Powered By: </span>
+            <a href="http://foundationdeck.com/" target="_blank"><img src="img/Capture1.png" alt="foundationdeck" id="fd" /></a>
+            <div><a href="">Download Now</a></div>
         </div>
-        <!--end row-->
     </div>
-    <!-- </div> -->
-    </div>
-    </div>
-    <!--end container-->
-    <!-- start scripts-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- Compressed JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.min.js" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="/assets/js/login.js"></script>
+    <script src="js/jquery-lastest.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script src="js/countdown.js"></script>
     <script>
-    $(document).foundation();
+        $(document).foundation();
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var arrow_position = "up"
+            $("#countdown").countdown({
+                date: "10 May 2016 11:20:00", //add the countdown's end date (i.e. 3 november 2012 12:00:00)
+                format: "on"
+            });
+
+            jQuery.fn.rotate = function (degrees) {
+                $(this).css({
+                    '-webkit-transform': 'rotate(' + degrees + 'deg)',
+                    '-moz-transform': 'rotate(' + degrees + 'deg)',
+                    '-ms-transform': 'rotate(' + degrees + 'deg)',
+                    'transform': 'rotate(' + degrees + 'deg)'
+                });
+                return $(this);
+            };
+
+            $("#arrow").click(function () {
+                if (arrow_position == "up") {
+                    $("#intro").animate({
+                        top: "-322",
+                    }, 500, function () {
+                        
+                    });$("#arrow").rotate(180);
+                    arrow_position = "down";
+                }
+                else {
+                    $("#intro").animate({
+                        top: "0",
+                    }, 500, function () {
+                        
+                    });$("#arrow").rotate(360);
+                    arrow_position = "up";
+                }
+            });
+        });
     </script>
 </body>
-
 </html>
