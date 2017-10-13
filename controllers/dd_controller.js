@@ -3,6 +3,7 @@ const express = require('express');
 const router = express.Router();
 const db = require('../models');
 const passport = require('../config/passport');
+var app = express();
 
 // Using the passport.authenticate middleware with our local strategy.
 // If the user has valid login credentials, send them to the members page.
