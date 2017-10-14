@@ -1,0 +1,119 @@
+<!Doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Profile - Dis or Dat</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css" crossorigin="anonymous" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/vendor/masonry.css">
+    <link rel="stylesheet" href="assets/css/disordat.css">
+</head>
+
+<body>
+    <!-- Nav bar -->
+    <div class="grid-x align-center" data-sticky-container>
+        <div class="sticky small-12 cell" data-sticky data-margin-top="0" id="nav-custom">
+            <div class="grid-x grid-padding-x grid-padding-y" id="nav-row">
+                <div class="small-4 cell" id="user-profile-thumbnail">
+                    <a href="/profile"><img class="img-responsive user-thumbnail" src="assets/img/charlie_thumb.jpg" /></a>
+                </div>
+                <!--end user-profile-thumbnail-->
+                <div class="small-4 cell" id="logo-text">
+                    <h3 class="text-center">DIS OR DAT</h3>
+                </div>
+                <!--end logo text-->
+                <div class="small-4 cell" id="nav-icons">
+                    <li class="mega-menu">
+                        <i class="fa fa-search fa-lg"></i>
+                        <a data-toggle="mega-menu" href="#"><i class="fa fa-pencil fa-lg"></i></a>
+                        <div class="dropdown-pane bottom" id="mega-menu" data-dropdown data-options="closeOnClick:true;  vOffset:11">
+                            <div class="decision-box">
+                                <div class="row collapse expanded">
+                                    <div class="decision-box-form-section">
+                                        <div class="grid-x grid-margin-x align-justify">
+                                            <div class="small-3 cell">
+                                                <img class="img-responsive decision-user-thumb-post" src="assets/img/charlie_thumb.jpg" />
+                                            </div>
+                                            <div class="small-9 decision-text cell">
+                                                <input class="decision-box-input decision-question" type="text" name="decision-question" placeholder="ASK YOUR FRIENDS A QUESTION" />
+                                                <p class="help-text">(add tags by using # before the word)</p>
+                                            </div>
+                                        </div>
+                                        <div class="grid-x align-justify">
+                                            <div class="small-6 cell decision-box-input-left">
+                                                <input class="decision-box-input" type="text" name="decision-choice-1-name" placeholder="CHOICE 1 NAME" />
+                                                <input class="decision-box-input" type="text" name="decision-choice-1-url" placeholder="PHOTO URL FOR CHOICE 1" />
+                                            </div>
+                                            <div class="small-6 cell decision-box-input-right">
+                                                <input class="decision-box-input" type="text" name="decision-choice-2-name" placeholder="CHOICE 2 NAME" />
+                                                <input class="decision-box-input" type="text" name="decision-choice-2-url" placeholder="PHOTO URL FOR CHOICE 2" />
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="small-6 small-centered text-center columns">
+                                                <input class="decision-box-submit-button" type="submit" name="decision_submit" value="POST" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end row expanded-->
+                </div>
+                </li>
+            </div>
+            <!--end nav icons-->
+        </div>
+        <!--end row-->
+    </div>
+    <!-- </div> -->
+    <div id="profile-container">
+        <h1>PROFILE</h1>
+        <div class="basic-card">
+            <div class="basic-card-image">
+                <img src="assets/img/charlie_thumb.jpg">
+            </div>
+            <div class="basic-card-content content callout secondary">
+                <h5>CHARLES MCDOWELL</h5>
+                <h6>@CDAWG</h6>
+            </div>
+            <div class="basic-card-content content callout secondary" id="black">
+                <div class="grid-x grid-margin-x align-justify">
+                    <div class="small-4 cell profile-stats">
+                        <h6>DECISIONS</h6>
+                        <h5>452</h5>
+                    </div>
+                    <div class="small-4 cell profile-stats">
+                        <h6>RANK</h6>
+                        <h5>320</h5>
+                    </div>
+                    <div class="small-4 cell profile-stats">
+                        <h6>VOTES CAST</h6>
+                        <h5>94</h5>
+                    </div>
+                </div>
+            </div>
+            <!--close black card -->
+            <div class="basic-card-content content callout secondary">
+                <h1>MY DECISIONS</h1>
+            </div>
+            
+            
+        </div>
+        <!-- close card -->
+    </div>
+    <!-- close container -->
+    <!-- start scripts-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Compressed JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.min.js" crossorigin="anonymous"></script>
+    <script>
+    $(document).foundation();
+    </script>
+</body>
+
+</html>
