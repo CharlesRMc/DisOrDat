@@ -41,7 +41,6 @@ router.get('/logout', (req, res) => {
 	res.redirect('/');
 });
 
-
 // Route for getting some data about our user to be used client side
 router.get('/api/profile', (req, res) => {
 	if (!req.user) {
@@ -83,13 +82,18 @@ router.get('/feed', (req, res) => {
 });
 
 router.post('/api/decision', (req, res) => {
+	// console.log(req.body.description);
 	db.Decision.create({
 		description: req.body.description,
 		user_id: req.user.id,
 		Choices: req.body.choices,
 		Tags: req.body.tags
-	}, { include: [db.Choice, db.Tag] }).then((dbDecision) => {
-		res.json(dbDecision);
+	},
+		{ include: [db.Choice, db.Tag] }
+	).then((dbDecision) => {
+		// res.json(dbDecision);
+		// res.redirect('/feed');
+		// console.log(dbDecision);
 	}).catch((err) => {
 		console.log(err);
 		res.json(err);
