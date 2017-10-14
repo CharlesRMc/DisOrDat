@@ -2,7 +2,7 @@
   "name": "disordat",
   "version": "1.0.0",
   "description": "Fun social app where users get opinions based on peers choices",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
