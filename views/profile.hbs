@@ -2,11 +2,11 @@
         <h1>PROFILE</h1>
         <div class="basic-card">
             <div class="basic-card-image">
-                <img src="assets/img/charlie_thumb.jpg">
+                <img src="{{this.User.pic}}">
             </div>
             <div class="basic-card-content content callout secondary">
-                <h5>CHARLES MCDOWELL</h5>
-                <h6>@CDAWG</h6>
+                <h5>{{this.User.userFirst}} {{this.User.userLast}}</h5>
+                <h6>{{this.User.userName}}</h6>
             </div>
             <div class="basic-card-content content callout secondary" id="black">
                 <div class="grid-x grid-margin-x align-justify">

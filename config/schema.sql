@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS disordat_db;
+CREATE DATABASE disordat_db;

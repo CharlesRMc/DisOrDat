@@ -5,6 +5,10 @@ $(document).ready(function () {
 	var passwordInput = $('input#password-input');
 	var passwordConfirmInput = $('input#password-confirm-input');
 	var userNameInput = $('input#username-input');
+	var userFNameInput = $('input#firstname-input');
+	var userLNameInput = $('input#lastname-input');
+	var userBdayInput = $('input#birthday-input');
+	var userPhotoInput = $('input#photo-input');
 
 	// When the signup button is clicked, we validate the email and password are not blank
 	signUpForm.on('submit', function (event) {
@@ -13,7 +17,11 @@ $(document).ready(function () {
 			email: emailInput.val().trim(),
 			password: passwordInput.val().trim(),
 			passwordConfirm: passwordConfirmInput.val().trim(),
-			userName: userNameInput.val().trim()
+			userName: userNameInput.val().trim(),
+			userFName: userFNameInput.val().trim(),
+			userLName: userLNameInput.val().trim(),
+			userBday: userBdayInput.val().trim(),
+			userPhoto: userPhotoInput.val().trim()
 		};
 
 		console.log(userData);
@@ -27,21 +35,36 @@ $(document).ready(function () {
 		}
 
 		// If we have an email and password, run the signUpUser function
-		signUpUser(userData.email, userData.password, userData.password);
+		signUpUser(userData.email, userData.password,userData.userName, userData.userFName, userData.userLName, userData.userBday, userData.userPhoto);
 		emailInput.val('');
 		passwordInput.val('');
+		passwordConfirmInput.val('');
 		userNameInput.val('');
+		userFNameInput.val('');
+		userLNameInput.val('');
+		userBdayInput.val('');
+		userPhotoInput.val('');
 	});
 
 	// Does a post to the signup route. If succesful, we are redirected to the members page
 	// Otherwise we log any errors
-	function signUpUser(email, password, userName) {
+	function signUpUser(email, password, userName,fName,lName,bDay,pic) {
 		$.post('/api/signup', {
 			email: email,
 			password: password,
-			userName: userName
+			userName: userName,
+			firstName: fName,
+			lastName: lName,
+			birthday: bDay,
+			photo: pic
 		}).then(function (data) {
-			window.location.replace(data);
+			console.log(data);
+			// JAKIE FIX THIS
+			// JAKIE FIX THIS
+			// JAKIE FIX THIS
+			// JAKIE FIX THIS
+			//window.location.replace(data);
+
 			// If there's an error, handle it by throwing up a boostrap alert
 		}).catch(handleLoginErr);
 	}
