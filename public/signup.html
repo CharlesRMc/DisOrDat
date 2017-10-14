@@ -16,23 +16,23 @@
 
 <body>
     <div class="main grid-y grid-padding-y align-center" id="content">
-        <div class="small-11 medium-7 large-5 cell">
+        <div class="small-11 medium-7 large-5 cell" id="inner">
             <div class="grid-x signup-box">
                 <div class="small-12 medium-5 large-5 columns sign-up">
                     <div id="descs">
                         <img src="assets/img/logo.png" id="logo" alt="logo" />
                         <h4>DIS OR DAT</h4>
                         <p id="desc-info">Help others make tough decisions</p>
-                        <div class="grid-x align-justify">
-                            <div class="small-3 cell">
+                        <div class="grid-x align-justify" id="stats">
+                            <div class="small-3 cell side-border">
                                 <p class="desc-stats">851</p>
                                 <p class="desc-words">VOTES</p>
                             </div>
-                            <div class="small-3 cell">
+                            <div class="small-3 cell side-border">
                                 <p class="desc-stats">262</p>
                                 <p class="desc-words">USERS</p>
                             </div>
-                            <div class="small-3 cell">
+                            <div class="small-3 cell side-border">
                                 <p class="desc-stats">504</p>
                                 <p class="desc-words">DECISIONS
                                     <!-- <br>MADE</p> -->
@@ -47,12 +47,23 @@
                 </div>
                 <div class="small-12 medium-7 large-7 columns sign-up">
                     <div id="signup-content">
+                            
                         <h4>SIGN UP</h4>
                         <form class="signup">
-                            <input type="text" placeholder="EMAIL ADDRESS" id="email-input" />
-                            <input type="text" placeholder="DESIRED USER NAME" id="username-input" />
-                            <input type="password" placeholder="PASSWORD" id="password-input" />
-                            <input type="password" placeholder="CONFIRM PASSWORD" id="password-confirm-input" />
+                            <div class="grid-x align-justify">
+                                <div class="small-6 cell left-input">
+                                    <input type="text" placeholder="FIRST NAME" id="firstname-input" />
+                                    <input type="text" placeholder="LAST NAME" id="lastname-input" />
+                                    <input type="date" placeholder="BIRTHDAY" id="birthday-input" />
+                                    <input type="text" placeholder="PHOTO URL" id="photo-input" />
+                                </div>
+                                <div class="small-6 cell right-input">
+                                    <input type="text" placeholder="EMAIL ADDRESS" id="email-input" />
+                                    <input type="text" placeholder="DESIRED USER NAME" id="username-input" />
+                                    <input type="password" placeholder="PASSWORD" id="password-input" />
+                                    <input type="password" placeholder="CONFIRM PASSWORD" id="password-confirm-input" />
+                                </div>
+                            </div>
                             <input type="submit" class="button radius tiny custom-btn" value="SIGN UP" />
                         </form>
                     </div>
