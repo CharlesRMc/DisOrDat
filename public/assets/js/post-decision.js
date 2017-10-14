@@ -60,7 +60,6 @@ $(document).ready(function () {
 	}
 });
 
-function tagsArray(tags) {
     parsedTags.push(tags);
     parsedTags.join(',');
     console.log(parsedTags);
