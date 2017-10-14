@@ -34,8 +34,6 @@ router.post('/api/signup', (req, res) => {
 		birthday: req.body.birthday,
 		profile_pic: req.body.photo
 
-
-		user_name: req.body.userName
     
 	}).then(function () {
 		res.redirect(307, '/feed');
