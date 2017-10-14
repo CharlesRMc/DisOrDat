@@ -1,0 +1,25 @@
+
+[{
+  "email": "kat@gmail.com",
+  "password": "testing",
+  "userName": "KatAttack",
+  "firstName": "Kathryn",
+  "lastName": "Herod",
+  "profile_pic": "http://ww2.hdnux.com/photos/06/72/35/1812349/6/920x920.jpg"
+},
+{
+  "email": "charles@gmail.com",
+  "password": "testing",
+  "userName": "CDawg",
+  "firstName": "Charles",
+  "lastName": "McDowell",
+  "profile_pic": "https://github.com/CharlesRMc/disordat/blob/master/public/assets/img/charlie_thumb.jpg?raw=true"
+},
+{
+  "email": "jakie@gmail.com",
+  "password": "testing",
+  "userName": "JRice",
+  "firstName": "Jakie",
+  "lastName": "Rice",
+  "profile_pic": "https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAA0LAAAAJGM0YTcyMzEwLWE4NTUtNDYyMy04YzhmLWQ4Y2I5YWE5OTUzYw.jpg"
+}]

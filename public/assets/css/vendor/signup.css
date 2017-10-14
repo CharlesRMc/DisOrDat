@@ -14,7 +14,7 @@
 
 .main {
     /* height: 100%; */
-    width: 100%;
+    /*width: 100%;
     /* display: table; */
 }
 
@@ -25,6 +25,11 @@
     -webkit-box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.75);
     -moz-box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.75);
     box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.75);
+    margin-top: 0px;
+}
+#inner {
+    margin-top: -25px;
+    padding: 0px;
 }
 h1, h2, h3, h4, h5, h6 {
     font-weight: 800;
@@ -50,10 +55,14 @@ p {
     width: 100px;
 }
 #signup-content {
-    padding: 20px 20px 60px 20px;
+    padding: 15px 15px 50px 15px;
     background: white;
     width: 100%;
     height: 350px;
+}
+#signup-content > h4 {
+    font-weight: 500;
+    font-size: 2rem;
 }
 #descs {
     background-color: black;
@@ -75,7 +84,9 @@ p {
     font-weight: 500;
     margin: 30px 0;
 }
-
+#stats {
+    padding-top: 15px;
+}
 .desc-words {
     color: #868686;
     font-size: 0.72rem;
@@ -84,7 +95,7 @@ p {
     color: white;
     font-size: 0.9rem;
 }
-input[type="text"],input[type="password"] {
+input[type="text"],input[type="date"],input[type="password"] {
     color: #C5C5C5;
     height: 2.3rem;
     border-bottom: 1px solid #0095FF;
@@ -96,33 +107,46 @@ input[type="text"],input[type="password"] {
     -webkit-border-image: -webkit-linear-gradient(left, #0095FF 0%, #AC69FF 100%);
     border-image: linear-gradient(to right, #0095FF 0%, #AC69FF 100%);
     border-image-slice: 1;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+}
+.left-input {
+    padding-right: 15px;
+}
+.right-input {
+    padding-left: 15px;
 }
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
     color: #C5C5C5;
+    font-size: 0.75rem;
 }
 :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
     color: #C5C5C5;
-   opacity:  1;
+    opacity:  1;
+    font-size: 0.75rem;
 }
 ::-moz-placeholder { /* Mozilla Firefox 19+ */
     color: #C5C5C5;
-   opacity:  1;
+    opacity:  1;
+    font-size: 0.75rem;
 }
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
-   color: #C5C5C5;
+    color: #C5C5C5;
+    font-size: 0.75rem;
 }
 ::-ms-input-placeholder { /* Microsoft Edge */
     color: #C5C5C5;
+    font-size: 0.75rem;
 }
 .custom-btn {
     background: rgb(126,185,229); /* Old browsers */
     background: -moz-linear-gradient(-45deg,  #0095FF 0%, #AC69FF 100%); /* FF3.6-15 */
     background: -webkit-linear-gradient(-45deg,  #0095FF 0%,#A664F7 100%); /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(-45deg,  #0095FF 0%,#B67BFF 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7eb9e5', endColorstr='#8e70b2',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-   font-family: 'Montserrat', sans-serif;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7eb9e5', endColorstr='#8e70b2',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    font-family: 'Montserrat', sans-serif;
     color: #FFFFFF;
-    margin-top: 15px;
+    margin-top: 15px!important;
     font-size: 14px!important;
     border-color: transparent;
     -webkit-box-shadow: 0px 10px 25px 0px rgba(0,0,0,0.75);
@@ -131,7 +155,9 @@ input[type="text"],input[type="password"] {
 }
 
 #descs h4 {
-    margin-top: 5px;
+    margin-top: 15px;
     color: #fff;
+    font-weight: 500;
+    font-size: 2rem;
 }
 
