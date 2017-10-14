@@ -2,7 +2,9 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../models');
+var isAuthenticated = require("../config/middleware/isAuthenticated");
 const passport = require('../config/passport');
+
 var app = express();
 
 // Using the passport.authenticate middleware with our local strategy.
@@ -53,7 +55,7 @@ router.get('/api/profile', (req, res) => {
 	}
 });
 
-router.get('/feed', (req, res) => {
+router.get('/feed', isAuthenticated, (req, res) => {
 	//searches the database for all "Decisions" that include the choice model
 	db.Decision.findAll({
 		include: [
@@ -81,7 +83,7 @@ router.get('/feed', (req, res) => {
 	});
 });
 
-router.post('/api/decision', (req, res) => {
+router.post('/api/decision', isAuthenticated, (req, res) => {
 	// console.log(req.body.description);
 	db.Decision.create({
 		description: req.body.description,
