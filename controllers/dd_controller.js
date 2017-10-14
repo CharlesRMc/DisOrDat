@@ -27,12 +27,16 @@ router.post('/api/signup', (req, res) => {
 
 		email: req.body.email,
 		password: req.body.password,
+
 		user_name: req.body.userName,
 		first_name: req.body.firstName,
 		last_name: req.body.lastName,
 		birthday: req.body.birthday,
 		profile_pic: req.body.photo
 
+
+		user_name: req.body.userName
+    
 	}).then(function () {
 		res.redirect(307, '/feed');
 	}).catch(function (err) {
@@ -49,7 +53,11 @@ router.get('/logout', (req, res) => {
 });
 
 // Route for getting some data about our user to be used client side
+
 router.get('/profile', (req, res) => {
+
+router.get('/api/profile', (req, res) => {
+
 	if (!req.user) {
 		// The user is not logged in, send back an empty object
 		res.json({});
@@ -166,5 +174,21 @@ router.post('/api/vote', (req, res) => {
 		res.json(err);
 	});
 });
+
+
+
+router.post('/api/vote', (req, res) => {
+	db.Vote.create({
+		neither: req.body.neither,
+		choice_id: req.body.choice_id,
+		user_id: req.user.id,
+		decision_id: req.body.decision_id
+	}).then((dbVote) => {
+		res.json(dbVote);
+	}).catch((err) => {
+		res.json(err);
+	});
+});
+
 
 module.exports = router;
