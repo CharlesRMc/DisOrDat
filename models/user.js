@@ -33,6 +33,10 @@ module.exports = function (sequelize, DataTypes) {
 			type: DataTypes.STRING,
 			allowNull: false
 		},
+		birthday: {
+			type: DataTypes.DATE,
+			allowNull: false
+		},
 		profile_pic: {
 			type: DataTypes.STRING,
 			allowNull: true
