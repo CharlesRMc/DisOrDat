@@ -5,7 +5,7 @@
 			<!-- user photo and decision text -->
 			<div class="grid-x grid-margin-x align-justify">
 				<div class="small-3 cell">
-					<img class="img-responsive decision-user-thumb" src="{{this.User.photo}}" />
+					<img class="img-responsive decision-user-thumb" src="{{this.User.profile_pic}}" />
 				</div>
 				<div class="small-9 decision-text cell">
 					<p><span class="user-first-name">{{this.User.user_name}}</span> asked: <span class="user-decision-text">{{this.description}}</span></p>
@@ -56,19 +56,19 @@
 			<!-- choice count -->
 			<div class="grid-x">
 				<div class="small-4">
-					<p class="choice-count">204</p>
+					<p class="choice-count">{{this.Choices.[0].Votes.length}}</p>
 				</div>
 				<div class="small-4">
-					<p class="choice-count">7</p>
+					<p class="choice-count">{{this.Votes.length}}</p>
 				</div>
 				<div class="small-4">
-					<p class="choice-count">76</p>
+					<p class="choice-count">{{this.Choices.[1].Votes.length}}</p>
 				</div>
 			</div>
 			<!-- make comment section -->
 			<div class="grid-x">
 				<div class="small-2 cell">
-					<img class="img-responsive this-user-thumb" src="assets/img/charlie_thumb.jpg" />
+					<img class="img-responsive this-user-thumb" src="{{user.photo}}" />
 				</div>
 				<div class="small-8 cell write-comment">
 					<div class="form-group">
