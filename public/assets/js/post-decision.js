@@ -18,10 +18,12 @@ $(document).ready(function () {
 			description: decisionQuestion.val().trim(),
 			choices: [
 				{
-					text: decisionChoiceOneName.val().trim(), photo: decisionChoiceOneUrl.val().trim()
+					text: decisionChoiceOneName.val().trim(), 
+					photo: decisionChoiceOneUrl.val().trim()
 				},
 				{
-					text: decisionChoiceTwoName.val().trim(), photo: decisionChoiceTwoUrl.val().trim()
+					text: decisionChoiceTwoName.val().trim(),
+					photo: decisionChoiceTwoUrl.val().trim()
 				}
 			],
 			tags: parsedTags
@@ -33,7 +35,7 @@ $(document).ready(function () {
 			return;
 		}
 		// If we have an email and password, run the signUpUser function
-		createDecision(decision);
+		createDecision(decision.description, decision.choices, decision.tags);
 		decisionQuestion.val('');
 		decisionChoiceOneName.val('');
 		decisionChoiceOneUrl.val('');
@@ -43,13 +45,15 @@ $(document).ready(function () {
 
 	// Does a post to the signup route. If succesful, we are redirected to the members page
 	// Otherwise we log any errors
-	function createDecision(decision) {
+	function createDecision(description, choices, tags) {
+		console.log(choices);
 		$.post('/api/decision', {
-			description: decision.description,
-			choices: decision.choices,
-			tags: decision.tags
+			description: description,
+			choices: JSON.stringify(choices),
+			tags: JSON.stringify(tags)
 		}).then(function (data) {
-			window.location.replace(data);
+			// window.location.replace(data);
+			console.log('HAHA!');
 			// If there's an error, handle it by throwing up a boostrap alert
 		}).catch(handleLoginErr);
 	};

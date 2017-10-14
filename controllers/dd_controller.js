@@ -21,26 +21,20 @@ router.post('/api/login', passport.authenticate('local'), (req, res) => {
 // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
 // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
 // otherwise send back an error
-
-
 router.post('/api/signup', (req, res) => {
 	console.log(req.body);
 	db.User.create({
 
 		email: req.body.email,
 		password: req.body.password,
-
 		user_name: req.body.userName,
 		first_name: req.body.firstName,
 		last_name: req.body.lastName,
 		birthday: req.body.birthday,
 		profile_pic: req.body.photo
-
-
-		user_name: req.body.userName
     
 	}).then(function () {
-		res.redirect(307, '/feed');
+		res.redirect(307, '/api/login');
 	}).catch(function (err) {
 		console.log(err);
 		res.json(err);
@@ -51,15 +45,12 @@ router.post('/api/signup', (req, res) => {
 // Route for logging user out
 router.get('/logout', (req, res) => {
 	req.logout();
-	res.redirect('/');
+	res.redirect('/api/login');
 });
 
 // Route for getting some data about our user to be used client side
 
-router.get('/profile', (req, res) => {
-
 router.get('/api/profile', (req, res) => {
-
 	if (!req.user) {
 		// The user is not logged in, send back an empty object
 		res.json({});
@@ -83,6 +74,7 @@ router.get('/api/profile', (req, res) => {
 });
 
 router.get('/feed', isAuthenticated, (req, res) => {
+	console.log('IN ROUTER GET /feed');
 	//searches the database for all "Decisions" that include the choice model
 	db.Decision.findAll({
 		include: [
@@ -97,6 +89,7 @@ router.get('/feed', isAuthenticated, (req, res) => {
 		]
 		//prints out the JSON
 	}).then(function (dbDecisions) {
+		// console.log(dbDecisions);
 		// res.redirect(307, "/");
 		var hbsObject = {
 			decisions: dbDecisions
@@ -110,19 +103,21 @@ router.get('/feed', isAuthenticated, (req, res) => {
 	});
 });
 
-router.post('/api/decision', isAuthenticated, (req, res) => {
-	// console.log(req.body.description);
+router.post('/api/decision', (req, res) => {
+	console.log(req.body.choices);
 	db.Decision.create({
 		description: req.body.description,
 		user_id: req.user.id,
-		Choices: req.body.choices,
-		Tags: req.body.tags
-	},
-		{ include: [db.Choice, db.Tag] }
-	).then((dbDecision) => {
-		// res.json(dbDecision);
-		// res.redirect('/feed');
-		// console.log(dbDecision);
+		Choices: JSON.parse(req.body.choices, null, 2),
+		Tags: JSON.parse(req.body.tags, null, 2)
+	},{ 
+		include: [db.Choice, db.Tag]
+	}).then((dbDecision) => {
+		console.log('Redirect feed');
+		// THIS DOES NOT WORK (refresh the page)
+		// return res.redirect('/feed');
+		// THIS WORKS BY window.location.replace() ON THE CLIENT SIDE
+		res.status(200).json('/feed');
 	}).catch((err) => {
 		console.log(err);
 		res.json(err);
@@ -182,8 +177,6 @@ router.post('/api/vote', (req, res) => {
 	});
 });
 
-
-
 router.post('/api/vote', (req, res) => {
 	db.Vote.create({
 		neither: req.body.neither,
@@ -196,6 +189,5 @@ router.post('/api/vote', (req, res) => {
 		res.json(err);
 	});
 });
-
 
 module.exports = router;

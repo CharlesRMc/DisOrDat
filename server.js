@@ -18,6 +18,7 @@ app.use(express.static('public'));
 
 app.engine('.hbs', exphbs({ defaultLayout: 'main', extname: '.hbs' }));
 app.set('view engine', '.hbs');
+// app.disable('view cache');
 // We need to use sessions to keep track of our user's login status
 app.use(session({ secret: '8913iohlkao9c8h1;39h;g9avj81h9', resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
