@@ -2,7 +2,7 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../models');
-var isAuthenticated = require("../config/middleware/isAuthenticated");
+const isAuthenticated = require('../congfig/middleware/isAuthenticated');
 const passport = require('../config/passport');
 
 var app = express();
@@ -54,7 +54,7 @@ router.get('/logout', (req, res) => {
 
 // Route for getting some data about our user to be used client side
 
-router.get('/profile', (req, res) => {
+
 
 router.get('/api/profile', (req, res) => {
 
@@ -80,7 +80,7 @@ router.get('/api/profile', (req, res) => {
 	}
 });
 
-router.get('/feed', isAuthenticated, (req, res) => {
+router.get('/feed', (req, res) => {
 	//searches the database for all "Decisions" that include the choice model
 	db.Decision.findAll({
 		include: [
@@ -108,19 +108,14 @@ router.get('/feed', isAuthenticated, (req, res) => {
 	});
 });
 
-router.post('/api/decision', isAuthenticated, (req, res) => {
-	// console.log(req.body.description);
+router.post('/api/decision', (req, res) => {
 	db.Decision.create({
 		description: req.body.description,
 		user_id: req.user.id,
 		Choices: req.body.choices,
 		Tags: req.body.tags
-	},
-		{ include: [db.Choice, db.Tag] }
-	).then((dbDecision) => {
-		// res.json(dbDecision);
-		// res.redirect('/feed');
-		// console.log(dbDecision);
+	}, { include: [db.Choice, db.Tag] }).then((dbDecision) => {
+		res.json(dbDecision);
 	}).catch((err) => {
 		console.log(err);
 		res.json(err);
