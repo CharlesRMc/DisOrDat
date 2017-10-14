@@ -1,3 +1,4 @@
+
 body, html {
     height: 100%;
     width: 100%;
@@ -5,7 +6,6 @@ body, html {
     font-family: 'Montserrat', sans-serif;
     overflow-x: hidden;
   }
-
   body {
    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#7eb9e5+0,8e70b2+100 */
    background: rgb(126,185,229); /* Old browsers */
@@ -13,6 +13,13 @@ body, html {
    background: -webkit-linear-gradient(-45deg,  #0095FF 0%,#A664F7 100%); /* Chrome10-25,Safari5.1-6 */
    background: linear-gradient(-45deg,  #0095FF 0%,#B67BFF 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7eb9e5', endColorstr='#8e70b2',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+h1,h2,h3,h4,h5 {
+  font-weight: 600;
+}
+h1,h2,h3,h4,h5,h6,p {
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
 }
 .container {
   overflow-x: hidden;
@@ -46,7 +53,7 @@ p {
   background: -webkit-linear-gradient(-45deg,  #0095FF 0%,#A664F7 100%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(-45deg,  #0095FF 0%,#B67BFF 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7eb9e5', endColorstr='#8e70b2',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-  height: 10vh;
+ 
   border-color: transparent;
   -webkit-box-shadow: 0px 10px 25px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: 0px 10px 25px 0px rgba(0,0,0,0.75);
@@ -54,16 +61,20 @@ p {
 } 
 #logo-text {
   color: white;
-  margin-top:2vh;
+  margin: auto;
 }
+#logo-text > h3 {
+  margin: 0;
+}
+
 #nav-icons {
   text-align: right;
-  margin-top:3vh;
+  margin: auto;
   list-style: none;
   display: inline-block;
 }
 #user-profile-thumbnail {
-  margin-top: 1vh;
+
 }
 .img-responsive {
   width: 100%;
@@ -231,4 +242,94 @@ p {
     margin-bottom: 10px;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
+  }
+
+  /* PROFILE CARD PROFILE CARD */
+ 
+  #profile-container {
+  
+    background: white;
+    width: 85%;
+    margin: 7.5% auto;
+    -webkit-box-shadow: 10px 10px 30px -5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 30px -5px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 30px -5px rgba(0,0,0,0.75);
+  }
+  #profile-container > h1 {
+    font-size: 4rem;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  .basic-card {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-bottom: 1rem;
+    background: #fefefe;
+    box-shadow: none;
+    overflow: hidden;
+    color: #0a0a0a;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    margin: 0 auto;
+    width: 80%;
+  }
+  
+  .basic-card > :last-child {
+    margin-bottom: 0;
+  }
+  
+  .basic-card-image {
+    grid-row-end: 4;
+    -ms-grid-row: 1;
+    grid-row-start: 1;
+  }
+  
+  .basic-card-image img {
+    width: 75%;
+    margin: auto 12.5% ;
+  }
+  
+  .basic-card-content {
+    border: 0;
+    grid-row-start: 3 / 4;
+    margin: 0;
+    overflow: scroll;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#c9c9c9+0,ffffff+100 */
+background: #c9c9c9; /* Old browsers */
+background: -moz-linear-gradient(top,  #c9c9c9 0%, #ffffff 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #c9c9c9 0%,#ffffff 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #c9c9c9 0%,#ffffff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c9c9c9', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+
+  }
+  .basic-card-content > h5 {
+    padding-top: 15px;
+  }
+  .basic-card-content > h6 {
+    color: gray;
+    font-size: 0.9rem;
+    padding-bottom: 15px;
+  }
+  #black {
+    background: black;
+   
+  }
+  .profile-stats > h6{
+    color: gray;
+    font-size: 0.65rem;
+    text-align: center;
+  }
+  .profile-stats > h5{
+    color: white;
+    font-size: 0.75rem;
+    text-align: center;
   }
