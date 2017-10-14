@@ -29,8 +29,8 @@ $(document).ready(function() {
     $.post("/api/login", {
       email: email,
       password: password
-    }).then(function(data) {
-      window.location.replace(data);
+    }).then(function(redirectUrl) {
+      window.location.replace(redirectUrl);
       // If there's an error, log the error
     }).catch(function(err) {
       console.log(err);
