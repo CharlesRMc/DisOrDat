@@ -29,7 +29,9 @@
         <div class="sticky small-12 cell" data-sticky data-margin-top="0" id="nav-custom">
             <div class="grid-x grid-padding-x grid-padding-y" id="nav-row">
                 <div class="small-4 cell" id="user-profile-thumbnail">
-                    <a href="/profile"><img class="img-responsive user-thumbnail" src="" /></a>
+                    <a href="/profile">
+                        <img class="img-responsive user-thumbnail" src="" />
+                    </a>
                 </div>
                 <!--end user-profile-thumbnail-->
                 <div class="small-4 cell" id="logo-text">
@@ -37,48 +39,55 @@
                 </div>
                 <!--end logo text-->
                 <div class="small-4 cell" id="nav-icons">
-                    <li class="mega-menu">
+                    <div class="mega-menu">
                         <i class="fa fa-search fa-lg"></i>
-                        <a data-toggle="mega-menu" href="#"><i class="fa fa-pencil fa-lg"></i></a>
+                        <a data-toggle="mega-menu" href="#">
+                            <i class="fa fa-pencil fa-lg"></i>
+                        </a>
                         <div class="dropdown-pane bottom" id="mega-menu" data-dropdown data-options="closeOnClick:true;  vOffset:11">
                             <div class="decision-box">
                                 <div class="decision-box-form-section">
-                                    <div class="grid-x grid-margin-x align-justify">
-                                        <div class="small-2 cell">
-                                            <img class="img-responsive decision-user-thumb-post" src="assets/img/charlie_thumb.jpg" />
+                                    <form class="decision">
+                                        <div class="grid-x grid-margin-x align-justify">
+                                            <div class="small-2 cell">
+                                                <img class="img-responsive decision-user-thumb-post" src="assets/img/charlie_thumb.jpg" />
+                                            </div>
+                                            <div class="small-9 decision-text cell">
+                                                <input class="decision-box-input decision-question" type="text" name="decision-question" placeholder="ASK YOUR FRIENDS A QUESTION"
+                                                    id="decision-question" />
+                                                <p class="help-text" id="tags">(add tags by using # before the word)</p>
+                                            </div>
                                         </div>
-                                        <div class="small-9 decision-text cell">
-                                            <input class="decision-box-input decision-question" type="text" name="decision-question" placeholder="ASK YOUR FRIENDS A QUESTION"
-                                            />
-                                            <p class="help-text">(add tags by using # before the word)</p>
+                                        <div class="grid-x align-justify">
+                                            <div class="small-6 cell decision-box-input-left">
+                                                <input class="decision-box-input" type="text" name="decision-choice-1-name" placeholder="CHOICE 1 NAME" id="decision-choice-1-name"
+                                                />
+                                                <input class="decision-box-input" type="text" name="decision-choice-1-url" placeholder="PHOTO URL FOR CHOICE 1" id="decision-choice-1-url"
+                                                />
+                                            </div>
+                                            <div class="small-6 cell decision-box-input-right">
+                                                <input class="decision-box-input" type="text" name="decision-choice-2-name" placeholder="CHOICE 2 NAME" id="decision-choice-2-name"
+                                                />
+                                                <input class="decision-box-input" type="text" name="decision-choice-2-url" placeholder="PHOTO URL FOR CHOICE 2" id="decision-choice-2-url"
+                                                />
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="grid-x align-justify">
-                                        <div class="small-6 cell decision-box-input-left">
-                                            <input class="decision-box-input" type="text" name="decision-choice-1-name" placeholder="CHOICE 1 NAME" />
-                                            <input class="decision-box-input" type="text" name="decision-choice-1-url" placeholder="PHOTO URL FOR CHOICE 1" />
+                                        <div class="row">
+                                            <div class="small-6 small-centered text-center columns">
+                                                <input class="decision-box-submit-button" type="submit" name="decision-submit" value="POST" />
+                                            </div>
                                         </div>
-                                        <div class="small-6 cell decision-box-input-right">
-                                            <input class="decision-box-input" type="text" name="decision-choice-2-name" placeholder="CHOICE 2 NAME" />
-                                            <input class="decision-box-input" type="text" name="decision-choice-2-url" placeholder="PHOTO URL FOR CHOICE 2" />
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="small-6 small-centered text-center columns">
-                                            <input class="decision-box-submit-button" type="submit" name="decision_submit" value="POST" />
-                                        </div>
-                                    </div>
+                                    </form>
                                 </div>
-
                             </div>
-                        </div> --}}
-                        <!-- end row expanded-->
+                        </div>
                     </div>
                 </div>
             </div>
-            <!--end nav icons-->
         </div>
-        <!--end row-->
+        <!--end nav icons-->
+    </div>
+    <!--end row-->
     </div>
     <div class="grid-x align-center">
         <div class="small-11 cell" id="main-content">
@@ -93,6 +102,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="/assets/js/login.js"></script>
     <script type="text/javascript" src="/assets/js/signup.js"></script>
+    <script type="text/javascript" src="/assets/js/post-decision.js"></script>
     <script>
         $(document).foundation();
     </script>
