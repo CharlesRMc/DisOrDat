@@ -2,7 +2,7 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../models');
-const isAuthenticated = require('../congfig/middleware/isAuthenticated');
+const isAuthenticated = require('../config/middleware/isAuthenticated');
 const passport = require('../config/passport');
 
 var app = express();
