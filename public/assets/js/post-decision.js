@@ -1,7 +1,7 @@
 $(document).ready(function () {
 	var decisionForm = $('form.decision');
 	var decisionQuestion = $('input#decision-question');
-	var tags = $('input#tags');
+	// var tags = $('input#tags');
 	var decisionChoiceOneName = $('input#decision-choice-1-name');
 	var decisionChoiceOneUrl = $('input#decision-choice-1-url');
 	var decisionChoiceTwoName = $('input#decision-choice-2-name');
@@ -11,14 +11,23 @@ $(document).ready(function () {
 	decisionForm.on('submit', function (event) {
 		event.preventDefault();
 
-		console.log('Decision submit');
+		// console.log('Decision submit');
 
+		var words = decisionQuestion.val().split(' ');
+		// console.log('decision', words);
 		var parsedTags = [];
+		$.each(words, function (i, val) {
+			if (words[i].indexOf('#') === 0) {
+				parsedTags.push({ tag_name: words[i] });
+			}
+		});
+		// console.log('parsed tags: ', parsedTags);
+
 		var decision = {
 			description: decisionQuestion.val().trim(),
 			choices: [
 				{
-					text: decisionChoiceOneName.val().trim(), 
+					text: decisionChoiceOneName.val().trim(),
 					photo: decisionChoiceOneUrl.val().trim()
 				},
 				{
@@ -29,7 +38,7 @@ $(document).ready(function () {
 			tags: parsedTags
 		};
 
-		console.log(decision);
+		// console.log(decision);
 
 		if (!decision.description || !decision.choices) {
 			return;
@@ -51,9 +60,8 @@ $(document).ready(function () {
 			description: description,
 			choices: JSON.stringify(choices),
 			tags: JSON.stringify(tags)
-		}).then(function (data) {
-			// window.location.replace(data);
-			console.log('HAHA!');
+		}).then(function (redirectUrl) {
+			window.location.replace(redirectUrl);
 			// If there's an error, handle it by throwing up a boostrap alert
 		}).catch(handleLoginErr);
 	};
@@ -64,7 +72,8 @@ $(document).ready(function () {
 	}
 });
 
-    parsedTags.push(tags);
-    parsedTags.join(',');
-    console.log(parsedTags);
-};
+// function tagsArray(tags) { 
+//     parsedTags.push(tags);
+//     parsedTags.join(',');
+//     console.log(parsedTags);
+// };

@@ -8,8 +8,13 @@
 					<img class="img-responsive decision-user-thumb" src="{{this.User.profile_pic}}" />
 				</div>
 				<div class="small-9 decision-text cell">
-					<p><span class="user-first-name">{{this.User.user_name}}</span> asked: <span class="user-decision-text">{{this.description}}</span></p>
-					<p id="decision-timestamp"><span>4 HOURS AGO</span></p>
+					<p>
+						<span class="user-first-name">{{this.User.user_name}}</span> asked:
+						<span class="user-decision-text">{{this.description}}</span>
+					</p>
+					<p id="decision-timestamp">
+						<span>4 HOURS AGO</span>
+					</p>
 				</div>
 			</div>
 			<!-- tags -->
@@ -23,10 +28,20 @@
 			<!-- choices photos -->
 			<div class="grid-x align-justify decision-photos">
 				<div class="small-6 cell decision-photo-left">
-					<img class="img-responsive decision-photo" src="{{this.Choices.[0].photo}}" />
+					{{#if this.Choices.[0].photo}}
+					<img class="img-responsive decision-photo" src="{{this.Choices.[0].photo}}" /> {{else}}
+					<div class="decision-choice-text">
+						<p>{{this.Choices.[0].text}}</p>
+					</div>
+					{{/if}}
 				</div>
 				<div class="small-6 cell decision-photo-right">
-					<img class="img-responsive decision-photo" src="{{this.Choices.[1].photo}}" />
+					{{#if this.Choices.[1].photo}}
+					<img class="img-responsive decision-photo" src="{{this.Choices.[1].photo}}" /> {{else}}
+					<div class="decision-choice-text">
+						<p>{{this.Choices.[1].text}}</p>
+					</div>
+					{{/if}}
 				</div>
 			</div>
 			<!-- choice buttons -->
@@ -50,7 +65,7 @@
 					<p class="choice-text">NEITHER</p>
 				</div>
 				<div class="small-4 cell">
-					<p class="choice-text">DATE</p>
+					<p class="choice-text">DAT</p>
 				</div>
 			</div>
 			<!-- choice count -->
@@ -83,14 +98,17 @@
 			{{#each this.Comments}}
 			<div class="grid-x grid-margin-x" id="user-comments">
 				<div class="small-3 cell">
-					<img class="img-responsive comment-user-thumb" src="{{this.User.profile_pic}}"
-					/>
+					<img class="img-responsive comment-user-thumb" src="{{this.User.profile_pic}}" />
 				</div>
 				<div class="small-9 cell">
 					<p class="comment-text">
-						<span class="comment-user-name">{{this.User.user_name}}</span> commented: <br><span class="comment-user-text">{{this.text}}</span>
+						<span class="comment-user-name">{{this.User.user_name}}</span> commented:
+						<br>
+						<span class="comment-user-text">{{this.text}}</span>
 					</p>
-					<p class="comment-timestamp"><span>4 HOURS AGO</span></p>
+					<p class="comment-timestamp">
+						<span>4 HOURS AGO</span>
+					</p>
 				</div>
 			</div>
 			{{/each}}

@@ -74,7 +74,7 @@ router.get('/api/profile', (req, res) => {
 	}
 });
 
-router.get('/feed', (req, res) => {
+router.get('/feed', isAuthenticated, (req, res) => {
 	//searches the database for all "Decisions" that include the choice model
 	db.Decision.findAll({
 		include: [
