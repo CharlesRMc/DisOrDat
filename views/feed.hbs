@@ -3,22 +3,21 @@
 	<div class="masonry-css-item">
 		<div class="callout">
 			<!-- user photo and decision text -->
-			<div class="grid-x grid-margin-x align-justify">
+			<div class="grid-x align-justify">
+				<div class="small-12 cell">
+					<p id="decision-timestamp">
+						<span>{{moment this.created_at "fromNow"}}</span>
+					</p>
+				</div>
 				<div class="small-3 cell">
 					<img class="img-responsive decision-user-thumb" src="{{this.User.profile_pic}}" />
 				</div>
-				<div class="small-9 decision-text cell">
+				<div class="small-8 decision-text cell">
 					<p>
 						<span class="user-first-name">{{this.User.user_name}}</span> asked:
 						<span class="user-decision-text">{{this.description}}</span>
 					</p>
-					<p id="decision-timestamp">
-						<span>4 HOURS AGO</span>
-					</p>
 				</div>
-			</div>
-			<!-- tags -->
-			<div class="grid-x">
 				<div class="small-12 cell">
 					<p class="tag-text">
 						{{#each this.Tags}} {{this.tag_name}} {{/each}}
@@ -83,7 +82,7 @@
 			<!-- make comment section -->
 			<div class="grid-x">
 				<div class="small-2 cell">
-					<img class="img-responsive this-user-thumb" src="{{user.photo}}" />
+					<img class="img-responsive this-user-thumb" src="{{../user.profile_pic}}" />
 				</div>
 				<div class="small-8 cell write-comment">
 					<div class="form-group">
@@ -107,7 +106,7 @@
 						<span class="comment-user-text">{{this.text}}</span>
 					</p>
 					<p class="comment-timestamp">
-						<span>4 HOURS AGO</span>
+						<span>{{moment this.created_at "fromNow"}}</span>
 					</p>
 				</div>
 			</div>

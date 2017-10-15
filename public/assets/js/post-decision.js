@@ -22,9 +22,11 @@ $(document).ready(function () {
 			}
 		});
 		// console.log('parsed tags: ', parsedTags);
+		var regexp = new RegExp('#([^\\s]*)', 'g');
+		var description = decisionQuestion.val().replace(regexp, '').trim();
 
 		var decision = {
-			description: decisionQuestion.val().trim(),
+			description: description,
 			choices: [
 				{
 					text: decisionChoiceOneName.val().trim(),
@@ -38,7 +40,7 @@ $(document).ready(function () {
 			tags: parsedTags
 		};
 
-		// console.log(decision);
+		console.log(decision);
 
 		if (!decision.description || !decision.choices) {
 			return;
