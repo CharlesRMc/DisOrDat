@@ -63,3 +63,8 @@ $(document).ready(function () {
 		$('#alert').fadeIn(500);
 	}
 });
+
+    parsedTags.push(tags);
+    parsedTags.join(',');
+    console.log(parsedTags);
+};

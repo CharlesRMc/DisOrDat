@@ -2,7 +2,7 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../models');
-const isAuthenticated = require("../config/middleware/isAuthenticated");
+const isAuthenticated = require('../config/middleware/isAuthenticated');
 const passport = require('../config/passport');
 
 var app = express();
@@ -33,6 +33,7 @@ router.post('/api/signup', (req, res) => {
 		birthday: req.body.birthday,
 		profile_pic: req.body.photo
 
+    
 	}).then(function () {
 		res.redirect(307, '/api/login');
 	}).catch(function (err) {
@@ -73,52 +74,7 @@ router.get('/api/profile', (req, res) => {
 	}
 });
 
-router.get('/api/feed', (req, res) => {
-	console.log('IN ROUTER GET /feed');
-	//searches the database for all "Decisions" that include the choice model
-	db.Decision.findAll({
-		include: [
-			{
-				model: db.User,
-				attributes: { exclude: ["password"] }
-			},
-			{
-				model: db.Choice,
-				include: [db.Vote],
-				required: false
-			},
-			{ model: db.Tag },
-			{
-				model: db.Vote,
-				where: { neither: true },
-				required: false
-			},
-			{
-				model: db.Comment,
-				include: [db.User]
-			}
-		]
-		//prints out the JSON
-	}).then(function (dbDecisions) {
-		// console.log(dbDecisions);
-		// res.redirect(307, "/");
-		// var hbsObject = {
-		// 	// decisions: dbDecisions,
-		// 	disCount: dbDecisions.Choices[0].Votes.length,
-		// 	disCount: dbDecisions.Choices[1].Votes.length,
-		// 	datCount: dbDecisions.Votes.length
-		// };
-		// res.render('feed', hbsObject);
-		res.json(dbDecisions);
-		//catches any errors
-	}).catch(function (err) {
-		console.log(err);
-		res.json(err);
-	});
-});
-
-router.get('/feed', isAuthenticated, (req, res) => {
-	console.log('IN ROUTER GET /feed');
+router.get('/feed', (req, res) => {
 	//searches the database for all "Decisions" that include the choice model
 	db.Decision.findAll({
 		include: [
