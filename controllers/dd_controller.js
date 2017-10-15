@@ -64,8 +64,6 @@ router.get('/api/profile', (req, res) => {
 				userEmail: loggedUser.email,
 				userBio: loggedUser.bio
 			};
-			console.log('THIS IS THE DATABASE USER')
-			console.log(hbsObject)
 			res.render('profile', hbsObject);
 		});
 	}
@@ -97,8 +95,6 @@ router.get('/feed', isAuthenticated, (req, res) => {
 		]
 		//prints out the JSON
 	}).then(function (dbDecisions) {
-		console.log(req.user);
-		// res.redirect(307, "/");
 		var hbsObject = {
 			decisions: dbDecisions,
 			user: req.user
@@ -180,20 +176,7 @@ router.post('/api/vote', (req, res) => {
 		user_id: req.user.id,
 		decision_id: req.body.decision_id
 	}).then((dbVote) => {
-		res.json(dbVote);
-	}).catch((err) => {
-		res.json(err);
-	});
-});
-
-router.post('/api/vote', (req, res) => {
-	db.Vote.create({
-		neither: req.body.neither,
-		choice_id: req.body.choice_id,
-		user_id: req.user.id,
-		decision_id: req.body.decision_id
-	}).then((dbVote) => {
-		res.json(dbVote);
+		res.status(200).json('/feed');
 	}).catch((err) => {
 		res.json(err);
 	});
