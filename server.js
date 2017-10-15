@@ -12,34 +12,6 @@ const mysql = require('mysql2');
 const PORT = process.env.PORT || 3306;
 const db = require('./models');
 
-
-// if(process.env.JAWSDB_URL){
-// 	connection = mysql.createConnection(process.env.JAWSDB_URL);
-// }else {
-
-// connection = mysql.createConnection({
-// 	port: 3306,
-// 	host: key.host,
-// 	user: key.user,
-// 	password: key.password,
-// 	database: "disordat_productiom"
-// });
-// };
-
-// if (require("./key.js")){
-// 	var kee = require("./key.js");
-  
-// 	if (env==="production") {
-// 	  config.user = kee.user,
-// 	  config.password = kee.password,
-// 	  config.database = kee.database,
-// 	  config.host = kee.host,
-// 	  dialect = "mysql",
-// 	  use_env_variable = "JAWSDB_URL"
-// 	}
-// 	console.log(config.user);
-//   };
-
 // Creating express app and configuring middleware needed for authentication
 var app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
