@@ -28,29 +28,29 @@
     <div class="grid-x align-center" data-sticky-container>
         <div class="sticky small-12 cell" data-sticky data-margin-top="0" id="nav-custom">
             <div class="grid-x grid-padding-x grid-padding-y" id="nav-row">
-                <div class="small-4 cell" id="user-profile-thumbnail">
+                <div class="small-3 cell" id="user-profile-thumbnail">
                     <a href="/profile">
-                        <img class="img-responsive user-thumbnail" src="" />
+                        <img class="img-responsive user-thumbnail" src="{{user.profile_pic}}" />
                     </a>
                 </div>
                 <!--end user-profile-thumbnail-->
-                <div class="small-4 cell" id="logo-text">
+                <div class="small-6 cell" id="logo-text">
                     <h3 class="text-center">DIS OR DAT</h3>
                 </div>
                 <!--end logo text-->
-                <div class="small-4 cell" id="nav-icons">
+                <div class="small-3 cell" id="nav-icons">
                     <div class="mega-menu">
                         <i class="fa fa-search fa-lg"></i>
                         <a data-toggle="mega-menu" href="#">
                             <i class="fa fa-pencil fa-lg"></i>
                         </a>
-                        <div class="dropdown-pane bottom" id="mega-menu" data-dropdown data-options="closeOnClick:true;  vOffset:11">
+                        <div class="dropdown-pane bottom small-12 medium-8 cell" id="mega-menu" data-dropdown data-options="closeOnClick:true;  vOffset:11">
                             <div class="decision-box">
                                 <div class="decision-box-form-section">
                                     <form class="decision">
                                         <div class="grid-x grid-margin-x align-justify">
-                                            <div class="small-2 cell">
-                                                <img class="img-responsive decision-user-thumb-post" src="assets/img/charlie_thumb.jpg" />
+                                            <div class="small-3 medium-2 cell">
+                                                <img class="img-responsive decision-user-thumb-post" src="{{user.profile_pic}}" />
                                             </div>
                                             <div class="small-9 decision-text cell">
                                                 <input class="decision-box-input decision-question" type="text" name="decision-question" placeholder="ASK YOUR FRIENDS A QUESTION"
@@ -72,8 +72,8 @@
                                                 />
                                             </div>
                                         </div>
-                                        <div class="row">
-                                            <div class="small-6 small-centered text-center columns">
+                                        <div class="grid-x">
+                                            <div class="small-12 cell small-centered text-center">
                                                 <input class="decision-box-submit-button" type="submit" name="decision-submit" value="POST" />
                                             </div>
                                         </div>
@@ -88,9 +88,8 @@
         <!--end nav icons-->
     </div>
     <!--end row-->
-    </div>
-    <div class="grid-x align-center">
-        <div class="small-11 cell" id="main-content">
+    <div class="grid-x grid-padding-x">
+        <div class="small-12 cell" id="main-content">
             {{{body}}}
         </div>
     </div>

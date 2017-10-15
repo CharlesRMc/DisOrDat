@@ -1,7 +1,7 @@
 $(document).ready(function () {
 	var decisionForm = $('form.decision');
 	var decisionQuestion = $('input#decision-question');
-	var tags = $('input#tags');
+	// var tags = $('input#tags');
 	var decisionChoiceOneName = $('input#decision-choice-1-name');
 	var decisionChoiceOneUrl = $('input#decision-choice-1-url');
 	var decisionChoiceTwoName = $('input#decision-choice-2-name');
@@ -11,17 +11,30 @@ $(document).ready(function () {
 	decisionForm.on('submit', function (event) {
 		event.preventDefault();
 
-		console.log('Decision submit');
+		// console.log('Decision submit');
 
+		var words = decisionQuestion.val().split(' ');
+		// console.log('decision', words);
 		var parsedTags = [];
+		$.each(words, function (i, val) {
+			if (words[i].indexOf('#') === 0) {
+				parsedTags.push({ tag_name: words[i] });
+			}
+		});
+		// console.log('parsed tags: ', parsedTags);
+		var regexp = new RegExp('#([^\\s]*)', 'g');
+		var description = decisionQuestion.val().replace(regexp, '').trim();
+
 		var decision = {
-			description: decisionQuestion.val().trim(),
+			description: description,
 			choices: [
 				{
-					text: decisionChoiceOneName.val().trim(), photo: decisionChoiceOneUrl.val().trim()
+					text: decisionChoiceOneName.val().trim(),
+					photo: decisionChoiceOneUrl.val().trim()
 				},
 				{
-					text: decisionChoiceTwoName.val().trim(), photo: decisionChoiceTwoUrl.val().trim()
+					text: decisionChoiceTwoName.val().trim(),
+					photo: decisionChoiceTwoUrl.val().trim()
 				}
 			],
 			tags: parsedTags
@@ -33,7 +46,7 @@ $(document).ready(function () {
 			return;
 		}
 		// If we have an email and password, run the signUpUser function
-		createDecision(decision);
+		createDecision(decision.description, decision.choices, decision.tags);
 		decisionQuestion.val('');
 		decisionChoiceOneName.val('');
 		decisionChoiceOneUrl.val('');
@@ -43,13 +56,14 @@ $(document).ready(function () {
 
 	// Does a post to the signup route. If succesful, we are redirected to the members page
 	// Otherwise we log any errors
-	function createDecision(decision) {
+	function createDecision(description, choices, tags) {
+		console.log(choices);
 		$.post('/api/decision', {
-			description: decision.description,
-			choices: decision.choices,
-			tags: decision.tags
-		}).then(function (data) {
-			window.location.replace(data);
+			description: description,
+			choices: JSON.stringify(choices),
+			tags: JSON.stringify(tags)
+		}).then(function (redirectUrl) {
+			window.location.replace(redirectUrl);
 			// If there's an error, handle it by throwing up a boostrap alert
 		}).catch(handleLoginErr);
 	};
@@ -60,7 +74,8 @@ $(document).ready(function () {
 	}
 });
 
-    parsedTags.push(tags);
-    parsedTags.join(',');
-    console.log(parsedTags);
-};
+// function tagsArray(tags) { 
+//     parsedTags.push(tags);
+//     parsedTags.join(',');
+//     console.log(parsedTags);
+// };
