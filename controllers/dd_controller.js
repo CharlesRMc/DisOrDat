@@ -53,6 +53,9 @@ router.get('/profile', isAuthenticated, (req, res) => {
 		where: {
 			user_id: req.user.id
 		},
+		order: [
+			['created_at', 'DESC']
+		],
 		include: [
 			{
 				model: db.User,
@@ -71,7 +74,10 @@ router.get('/profile', isAuthenticated, (req, res) => {
 			},
 			{
 				model: db.Comment,
-				include: [db.User]
+				include: [db.User],
+				order: [
+					['created_at', 'DESC']
+				]
 			}
 		]
 	}).then((dbUserDecisions) => {
@@ -92,6 +98,10 @@ router.get('/profile', isAuthenticated, (req, res) => {
 router.get('/feed', isAuthenticated, (req, res) => {
 	//searches the database for all "Decisions" that include the choice model
 	db.Decision.findAll({
+		order: [
+			['created_at', 'DESC'],
+			[db.Comment, 'updated_at', 'DESC']
+		],
 		include: [
 			{
 				model: db.User,
