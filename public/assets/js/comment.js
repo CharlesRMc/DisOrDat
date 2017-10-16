@@ -1,15 +1,12 @@
 $(document).ready(function () {
-	var commentForm = $('form.comment-form');
-	var comment = $('input#comment-box-input');
 
 	// When the signup button is clicked, we validate the email and password are not blank
-	commentForm.on('submit', function (event) {
+	$('form.comment-form').on('submit', function (event) {
 		event.preventDefault();
 
-		console.log('data-choice-id');
-		console.log($(this).attr('data-choice-id'));
 		var decisionId = $(this).attr('data-decision-id');
-		var commentText = comment.val().trim();
+		var commentText = $(this).find('input').val().trim();;
+		console.log(commentText);
 		// If we have an email and password, run the signUpUser function
 		postComment(decisionId, commentText);
 	});
