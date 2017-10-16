@@ -1,0 +1,118 @@
+#login-container {
+    background: black; 
+    width: 320px;
+    height: 90vh;
+    margin: 5vh auto;
+   
+}
+#login-logo {
+    width: 50%;
+    margin-top: 5vh
+}
+#brand-name {
+    color: white;
+    text-align: center;
+    margin-top: 5vh;
+}
+.white {
+    color: white;
+    text-transform: uppercase;
+}
+/* LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN LOGIN*/
+
+  #logo-holder {
+    margin: 15% auto;
+    width: 45%;
+    
+  }
+  /*END LOGIN END LOGIN END LOGIN END LOGIN END LOGIN*/
+  
+  /* FORMS FORMS FORMS FORMS FORMS */
+  .form-signin {
+      width: 95%;
+      margin: 20% auto;
+      background: black;
+      
+    }
+
+    #form-email {
+      color: white;
+      font-weight: 100;
+      text-transform: uppercase;
+    }
+    .form-signin .checkbox {
+      font-weight: normal;
+    }
+    .form-signin .form-control {
+      position: relative;
+      height: auto;
+      -webkit-box-sizing: border-box;
+         -moz-box-sizing: border-box;
+              box-sizing: border-box;
+      padding: 10px;
+      font-size: 16px;
+    }
+    .form-signin .form-control:focus {
+      z-index: 2;
+    }
+    .form-signin input[type="email"], .form-signin input[type="password"] {
+        height: 10vh;
+        border-radius: 0px;
+        margin: 0;
+        color: black;    
+        background: inherit;
+        border: 0px;    
+    }
+    .input-group-l {
+         /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#cccccc+0,e2e2e2+23,ffffff+100 */
+         background: rgb(204,204,204); /* Old browsers */
+         background: -moz-linear-gradient(top,  rgba(204,204,204,1) 0%, rgba(226,226,226,1) 23%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
+         background: -webkit-linear-gradient(top,  rgba(204,204,204,1) 0%,rgba(226,226,226,1) 23%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+         background: linear-gradient(to bottom,  rgba(204,204,204,1) 0%,rgba(226,226,226,1) 23%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cccccc', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+         border-bottom: 1px solid gray
+    }
+    .input-group-addon {
+        border: 0px;
+        background: inherit;
+        border-radius: 0px;
+        color: black;
+    }
+    
+    .input-group-r{
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,e5e5e5+77,cccccc+100 */
+        background: rgb(255,255,255); /* Old browsers */
+        background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(229,229,229,1) 77%, rgba(204,204,204,1) 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 77%,rgba(204,204,204,1) 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 77%,rgba(204,204,204,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#cccccc',GradientType=0 ); /* IE6-9 */
+
+    }
+    ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        color: black!important;
+      }
+      ::-moz-placeholder { /* Firefox 19+ */
+        color: black!important;
+      }
+      :-ms-input-placeholder { /* IE 10+ */
+        color: black!important;
+      }
+      :-moz-placeholder { /* Firefox 18- */
+        color: black!important;
+      }
+
+#login-button {
+    margin-top: 5vh;
+    margin-bottom: 3vh;
+    width: 65%;
+    height: 8vh;
+    border-radius: 0px;
+    background: rgb(126,185,229); /* Old browsers */
+    background: -moz-linear-gradient(-45deg,  #0095FF 0%, #AC69FF 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg,  #0095FF 0%,#A664F7 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(-45deg,  #0095FF 0%,#B67BFF 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7eb9e5', endColorstr='#8e70b2',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    -webkit-box-shadow: 5px 5px 10px 0px rgba(97,97,97,1);
+    -moz-box-shadow: 5px 5px 10px 0px rgba(97,97,97,1);
+    box-shadow: 5px 5px 10px 0px rgba(97,97,97,1);
+}
