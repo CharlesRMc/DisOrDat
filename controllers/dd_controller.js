@@ -30,7 +30,7 @@ router.post('/api/signup', (req, res) => {
 		first_name: req.body.firstName,
 		last_name: req.body.lastName,
 		birthday: req.body.birthday,
-		profile_pic: req.body.photo    
+		profile_pic: req.body.photo
 	}).then(function () {
 		res.redirect(307, '/api/login');
 	}).catch(function (err) {
@@ -48,25 +48,45 @@ router.get('/logout', (req, res) => {
 
 // Route for getting some data about our user to be used client side
 
-router.get('/api/profile', (req, res) => {
-	if (!req.user) {
-		// The user is not logged in, send back an empty object
-		res.json({});
-	} else {
-		db.User.findOne({ where: { email: req.user.email } }).then((dbUser) => {
-			//res.status(200).send(dbUser);
-			var loggedUser = dbUser.dataValues;
-			var hbsObject = {
-				userName: loggedUser.user_name,
-				userFirst: loggedUser.first_name,
-				userLast: loggedUser.last_name,
-				pic: loggedUser.profile_pic,
-				userEmail: loggedUser.email,
-				userBio: loggedUser.bio
-			};
-			res.render('profile', hbsObject);
-		});
-	}
+router.get('/profile', isAuthenticated, (req, res) => {
+	db.Decision.findAll({
+		where: {
+			user_id: req.user.id
+		},
+		include: [
+			{
+				model: db.User,
+				attributes: { exclude: ["password"] }
+			},
+			{
+				model: db.Choice,
+				include: [db.Vote],
+				required: false
+			},
+			{ model: db.Tag },
+			{
+				model: db.Vote,
+				where: { neither: true },
+				required: false
+			},
+			{
+				model: db.Comment,
+				include: [db.User]
+			}
+		]
+	}).then((dbUserDecisions) => {
+
+		var hbsObject = {
+			decisions: dbUserDecisions,
+			user: req.user
+		};
+		res.render('profile', hbsObject);
+		// res.json(dbUserDecisions);
+		//catches any errors
+	}).catch(function (err) {
+		console.log(err);
+		res.json(err);
+	});
 });
 
 router.get('/feed', isAuthenticated, (req, res) => {
@@ -141,13 +161,14 @@ router.delete('/api/decision/:id', (req, res) => {
 	});
 });
 
-router.post('/api/comment', (req, res) => {
+router.post('/api/comment', isAuthenticated, (req, res) => {
 	db.Comment.create({
 		text: req.body.text,
 		user_id: req.user.id,
 		decision_id: req.body.decision_id
 	}).then((dbComment) => {
-		res.json(dbComment);
+		// res.json(dbComment);
+		res.status(200).json('/feed');
 	}).catch((err) => {
 		res.json(err);
 	});

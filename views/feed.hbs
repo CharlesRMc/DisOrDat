@@ -28,16 +28,21 @@
 			<div class="grid-x align-justify decision-photos">
 				<div class="small-6 cell decision-photo-left">
 					{{#if this.Choices.[0].photo}}
-					<img class="img-responsive decision-photo" src="{{this.Choices.[0].photo}}" /> {{else}}
-					<div class="decision-choice-text">
+					<div class="center-crop-image decision-choice">
+						<img class="img-responsive" src="{{this.Choices.[0].photo}}" />
+					</div> {{else}}
+					<div class="decision-choice-text decision-choice">
 						<p>{{this.Choices.[0].text}}</p>
 					</div>
 					{{/if}}
 				</div>
 				<div class="small-6 cell decision-photo-right">
 					{{#if this.Choices.[1].photo}}
-					<img class="img-responsive decision-photo" src="{{this.Choices.[1].photo}}" /> {{else}}
-					<div class="decision-choice-text">
+					<div class="center-crop-image decision-choice">
+						<img class="img-responsive" src="{{this.Choices.[1].photo}}" />
+					</div>
+					{{else}}
+					<div class="decision-choice-text decision-choice">
 						<p>{{this.Choices.[1].text}}</p>
 					</div>
 					{{/if}}
@@ -46,13 +51,13 @@
 			<!-- choice buttons -->
 			<div class="grid-x">
 				<div class="small-4 cell vote" data-choice-id="{{this.Choices.[0].id}}" data-decision-id="{{this.id}}">
-					<img class="dis-vote float-center choice-image" src="assets/img/Dis.png" />
+					<img class="dis-vote float-center choice-image" src="assets/img/dis_shaded.png" />
 				</div>
 				<div class="small-4 cell vote" data-choice-id="{{this.id}}" data-decision-id="{{this.id}}" data-neither="true">
-					<img class="neither-vote float-center choice-image" src="assets/img/poomoji.png" />
+					<img class="neither-vote float-center choice-image" src="assets/img/poomoji_shaded.png" />
 				</div>
 				<div class="small-4 cell vote" data-choice-id="{{this.Choices.[1].id}}" data-decision-id="{{this.id}}">
-					<img class="dat-vote float-center choice-image" src="assets/img/Dat.png" />
+					<img class="dat-vote float-center choice-image" src="assets/img/dat_shaded.png" />
 				</div>
 			</div>
 			<!-- choice text -->
@@ -84,14 +89,16 @@
 				<div class="small-2 cell">
 					<img class="img-responsive post-comment-user-thumb" src="{{../user.profile_pic}}" />
 				</div>
-				<form action="" class="comment-form" data-decision-id="{{this.id}}">
-					<div class="small-8 cell">
-						<input class="comment-box-input" type="text" name="comment" placeholder="Write a comment..." id="post-comment" />
-					</div>
-					<div class="small-2 cell">
-						<button type="submit" class="button">Post</button>
-					</div>
-				</form>
+				<div class="small-10 cell">
+					<form action="" class="comment-form grid-x" data-decision-id="{{this.id}}">
+						<div class="small-9 cell">
+							<input class="comment-box-input post-comment-input" type="text" name="comment" placeholder="Write a comment..." />
+						</div>
+						<div class="small-2 cell">
+							<button type="submit" class="button">Post</button>
+						</div>
+					</form>
+				</div>
 			</div>
 			<!-- comments -->
 			{{#each this.Comments}}
