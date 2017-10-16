@@ -23,6 +23,15 @@ router.post('/api/login', passport.authenticate('local'), (req, res) => {
 // otherwise send back an error
 router.post('/api/signup', (req, res) => {
 	console.log(req.body);
+	
+	var profilePic;
+
+	if (!req.body.photo) {
+		profilePic = '/assets/img/profile-pic-placeholder.png';
+	} else {
+		profilePic = req.body.photo;
+	}
+
 	db.User.create({
 		email: req.body.email,
 		password: req.body.password,
@@ -30,7 +39,7 @@ router.post('/api/signup', (req, res) => {
 		first_name: req.body.firstName,
 		last_name: req.body.lastName,
 		birthday: req.body.birthday,
-		profile_pic: req.body.photo
+		profile_pic: profilePic
 	}).then(function () {
 		res.redirect(307, '/api/login');
 	}).catch(function (err) {
