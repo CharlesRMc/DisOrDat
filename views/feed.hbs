@@ -45,13 +45,13 @@
 			</div>
 			<!-- choice buttons -->
 			<div class="grid-x">
-				<div class="small-4 cell">
+				<div class="small-4 cell vote" data-choice-id="{{this.Choices.[0].id}}" data-decision-id="{{this.id}}">
 					<img class="dis-vote float-center choice-image" src="assets/img/Dis.png" />
 				</div>
-				<div class="small-4 cell">
+				<div class="small-4 cell vote" data-choice-id="{{this.id}}" data-decision-id="{{this.id}}" data-neither="true">
 					<img class="neither-vote float-center choice-image" src="assets/img/poomoji.png" />
 				</div>
-				<div class="small-4 cell">
+				<div class="small-4 cell vote" data-choice-id="{{this.Choices.[1].id}}" data-decision-id="{{this.id}}">
 					<img class="dat-vote float-center choice-image" src="assets/img/Dat.png" />
 				</div>
 			</div>
@@ -80,14 +80,12 @@
 				</div>
 			</div>
 			<!-- make comment section -->
-			<div class="grid-x">
+			<div class="grid-x post-comment">
 				<div class="small-2 cell">
-					<img class="img-responsive this-user-thumb" src="{{../user.profile_pic}}" />
+					<img class="img-responsive post-comment-user-thumb" src="{{../user.profile_pic}}" />
 				</div>
-				<div class="small-8 cell write-comment">
-					<div class="form-group">
-						<input type="text" class="form-control" id="post-comment" value="post a comment">
-					</div>
+				<div class="small-8 cell comment-box-input">
+					<input class="comment-box-input" type="text" name="comment" placeholder="Write a comment..." id="post-comment" />
 				</div>
 				<div class="small-2 cell">
 					<button type="button" class="button">Post</button>
