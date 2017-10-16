@@ -18,6 +18,8 @@
     /* display: table; */
 }
 
+
+/* SIGN UP SIGN UP SIGN UP SIGN UP SIGN UP */
 #content {
     /* display: table-cell; */
     height: 100%;
@@ -46,7 +48,6 @@ p {
     -webkit-box-shadow: 0px 10px 25px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 10px 25px 0px rgba(0,0,0,0.75);
     box-shadow: 0px 10px 25px 0px rgba(0,0,0,0.75);
-
 }
 .sign-up {
     padding: 0px;
@@ -167,4 +168,4 @@ input[type="text"],input[type="date"],input[type="password"] {
     font-weight: 500;
     font-size: 2rem;
 }
-
+/* END SIGNUP END SIGNUP END SIGNUP END SIGNUP END SIGNUP */
