@@ -1,0 +1,69 @@
+#user-info {
+	overflow: hidden;
+	height: 100%;
+}
+
+.card {
+	-webkit-box-shadow: 0px 10px 25px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 10px 25px 0px rgba(0,0,0,0.75);
+	box-shadow: 0px 10px 25px 0px rgba(0,0,0,0.75);
+	border: 0;
+}
+
+.card h1 {
+	font-size: 4rem;
+	font-weight: 500;
+	text-align: center;
+}
+
+.profile-pic {
+	width: 100%;
+}
+
+#name {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#c9c9c9+0,ffffff+100 */
+	background: #c9c9c9; /* Old browsers */
+	background: -moz-linear-gradient(top,  #e8e8e8 0%, #ffffff 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #e8e8e8 0%,#ffffff 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #e8e8e8 0%,#ffffff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c9c9c9', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+	padding: 15px;
+	color: black;
+}
+
+#name h6 {
+		margin: 3px 10px;
+	color: gray;
+	font-size: 0.9rem;
+	padding-bottom: 15px;
+}
+
+#full-name {
+	padding-top: 15px;
+	padding-bottom: 7px;
+	margin: 0px 10px;
+	border-bottom: 4px solid transparent;
+	-moz-border-image: -moz-linear-gradient(left, #0095FF 0%, #AC69FF 100%);
+	-webkit-border-image: -webkit-linear-gradient(left, #0095FF 0%, #AC69FF 100%);
+	border-image: linear-gradient(to right, #0095FF 0%, #AC69FF 100%);
+	border-image-slice: 1;
+}
+
+#profile-stats {
+	background-color: black;
+	color: white;
+	text-align: center;
+}
+
+.stat-title {
+	padding-top: 15px;
+	color: gray;
+	font-size: 0.8rem;
+	text-align: center;
+}
+
+#profile-stats h5 {
+	color: white;
+	font-size: 0.9rem;
+	text-align: center;
+}
