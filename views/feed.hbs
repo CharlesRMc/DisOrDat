@@ -84,12 +84,14 @@
 				<div class="small-2 cell">
 					<img class="img-responsive post-comment-user-thumb" src="{{../user.profile_pic}}" />
 				</div>
-				<div class="small-8 cell comment-box-input">
-					<input class="comment-box-input" type="text" name="comment" placeholder="Write a comment..." id="post-comment" />
-				</div>
-				<div class="small-2 cell">
-					<button type="button" class="button">Post</button>
-				</div>
+				<form action="" class="comment-form" data-decision-id="{{this.id}}">
+					<div class="small-8 cell">
+						<input class="comment-box-input" type="text" name="comment" placeholder="Write a comment..." id="post-comment" />
+					</div>
+					<div class="small-2 cell">
+						<button type="submit" class="button">Post</button>
+					</div>
+				</form>
 			</div>
 			<!-- comments -->
 			{{#each this.Comments}}
