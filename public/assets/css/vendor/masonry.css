@@ -51,5 +51,9 @@
   -moz-box-shadow: 0px 10px 25px 0px rgba(0,0,0,0.75);
   box-shadow: 0px 10px 25px 0px rgba(0,0,0,0.75);
   /* z-index: -1; */
+  border: 0;
 }
 
+.callout {
+  padding: 1rem 1rem 0rem 1rem;
+}

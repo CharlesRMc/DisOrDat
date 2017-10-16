@@ -42,7 +42,6 @@ p {
   /* width: 85vw; */
 }
 
-
 .header-text {
   font-size: 10vw;
 }
@@ -55,12 +54,7 @@ p {
 
 /* NAV NAV NAV NAV NAV */
 #nav-custom {
-  background: rgb(126,185,229); /* Old browsers */
-  background: -moz-linear-gradient(-45deg,  #0095FF 0%, #AC69FF 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(-45deg,  #0095FF 0%,#A664F7 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(-45deg,  #0095FF 0%,#B67BFF 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7eb9e5', endColorstr='#8e70b2',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
- 
+  background-color: black; 
   border-color: transparent;
   -webkit-box-shadow: 0px 10px 25px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: 0px 10px 25px 0px rgba(0,0,0,0.75);
@@ -70,6 +64,14 @@ p {
   top: 0;
   z-index: 9999;
 } 
+#nav-custom a {
+  color: white;
+  text-decoration: none;
+}
+#nav-custom:active a {
+  color: white;
+  text-decoration: none;
+}
 #logo-text {
   color: white;
   margin: auto;
@@ -211,6 +213,24 @@ p {
   color: #363636;
   font-size: 13px;
 }
+
+.comment {
+  background-color: black;
+  color: white;
+
+  padding: 1rem 0.3rem 0rem 0.3rem;
+  	border-bottom: 4px solid transparent;
+	-moz-border-image: -moz-linear-gradient(left, #0095FF 0%, #AC69FF 100%);
+	-webkit-border-image: -webkit-linear-gradient(left, #0095FF 0%, #AC69FF 100%);
+	border-image: linear-gradient(to right, #0095FF 0%, #AC69FF 100%);
+	border-image-slice: 1;
+}
+.comment p {
+    font-weight: 500;
+}
+.comment img {
+  border: 2px solid white;
+}
 .comment-divider {
   margin-top: 5px;
   color: #000000;
@@ -219,7 +239,13 @@ p {
 	box-shadow: 0 10px 10px -10px #8c8b8b inset;
 }
 .decision-comments {
-  margin-top: -10px;
+  margin: 0rem -1.1rem -0.2rem -1.1rem;
+max-height: 25vh;
+overflow-y: scroll;
+}
+
+.decision-comments::-webkit-scrollbar {
+  display: none;
 }
 .post-comment-user-thumb {
   max-width: 30px;
@@ -258,7 +284,7 @@ p {
 .post-comment button {
   /* margin-left: -15px; */
   height: 2rem;
-  margin-left: 2px;
+  margin-left: 10px;
   padding: 1px 5px;
 }
 .post-comment-user-thumb {
@@ -268,7 +294,9 @@ p {
   font-size: 12px;
 }
 .comment-user-text {
-  color: #6B6B6B; 
+  color: white;
+  text-transform: none;
+  /* font-weight: 300; */
 }
 .comment-timestamp {
   text-align: right;
@@ -281,93 +309,3 @@ p {
   width: 100%;
 
 }
-
-
-  /* PROFILE CARD PROFILE CARD */
- 
-  #profile-container {
-    background: white;
-    width: 85%;
-    margin: 7.5% auto;
-    -webkit-box-shadow: 10px 10px 30px -5px rgba(0,0,0,0.75);
-    -moz-box-shadow: 10px 10px 30px -5px rgba(0,0,0,0.75);
-    box-shadow: 10px 10px 30px -5px rgba(0,0,0,0.75);
-  }
-  #profile-container > h1 {
-    font-size: 4rem;
-    font-weight: 500;
-    text-align: center;
-  }
-
-  .basic-card {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    margin-bottom: 1rem;
-    background: #fefefe;
-    box-shadow: none;
-    overflow: hidden;
-    color: #0a0a0a;
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
-    -ms-grid-rows: 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
-    margin: 0 auto;
-    width: 80%;
-  }
-  
-  .basic-card > :last-child {
-    margin-bottom: 0;
-  }
-  
-  .basic-card-image {
-    grid-row-end: 4;
-    -ms-grid-row: 1;
-    grid-row-start: 1;
-  }
-  
-  .basic-card-image img {
-    width: 75%;
-    margin: auto 12.5% ;
-  }
-  
-  .basic-card-content {
-    border: 0;
-    grid-row-start: 3 / 4;
-    margin: 0;
-    overflow: scroll;
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#c9c9c9+0,ffffff+100 */
-    background: #c9c9c9; /* Old browsers */
-    background: -moz-linear-gradient(top,  #c9c9c9 0%, #ffffff 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top,  #c9c9c9 0%,#ffffff 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom,  #c9c9c9 0%,#ffffff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c9c9c9', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
-
-  }
-  .basic-card-content > h5 {
-    padding-top: 15px;
-  }
-  .basic-card-content > h6 {
-    color: gray;
-    font-size: 0.9rem;
-    padding-bottom: 15px;
-  }
-  #black {
-    background: black;
-   
-  }
-  .profile-stats > h6{
-    color: gray;
-    font-size: 0.65rem;
-    text-align: center;
-  }
-  .profile-stats > h5{
-    color: white;
-    font-size: 0.75rem;
-    text-align: center;
-  }

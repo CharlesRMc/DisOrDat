@@ -101,23 +101,25 @@
 				</div>
 			</div>
 			<!-- comments -->
-			{{#each this.Comments}}
-			<div class="grid-x grid-margin-x" id="user-comments">
-				<div class="small-3 cell">
-					<img class="img-responsive comment-user-thumb" src="{{this.User.profile_pic}}" />
+			<div class="decision-comments">
+				{{#each this.Comments}}
+				<div class="grid-x grid-margin-x comment">
+					<div class="small-3 cell">
+						<img class="img-responsive comment-user-thumb" src="{{this.User.profile_pic}}" />
+					</div>
+					<div class="small-9 cell">
+						<p class="comment-text">
+							<span class="comment-user-name">{{this.User.user_name}}</span> commented:
+							<br>
+							<span class="comment-user-text">{{this.text}}</span>
+						</p>
+						<p class="comment-timestamp">
+							<span>{{moment this.created_at "fromNow"}}</span>
+						</p>
+					</div>
 				</div>
-				<div class="small-9 cell">
-					<p class="comment-text">
-						<span class="comment-user-name">{{this.User.user_name}}</span> commented:
-						<br>
-						<span class="comment-user-text">{{this.text}}</span>
-					</p>
-					<p class="comment-timestamp">
-						<span>{{moment this.created_at "fromNow"}}</span>
-					</p>
-				</div>
+				{{/each}}
 			</div>
-			{{/each}}
 		</div>
 	</div>
 	{{/each}}
