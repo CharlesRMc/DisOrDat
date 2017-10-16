@@ -70,6 +70,7 @@ $(document).ready(function () {
 	}
 
 	function handleLoginErr(err) {
+		// alert(err.responseJSON);
 		$('#alert .msg').text(err.responseJSON);
 		$('#alert').fadeIn(500);
 	}
