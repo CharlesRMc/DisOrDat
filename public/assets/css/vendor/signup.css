@@ -96,8 +96,11 @@ p {
     color: white;
     font-size: 0.9rem;
 }
+input {
+    color: black!important;
+}
 input[type="text"],input[type="date"],input[type="password"] {
-    color: #707070;
+    color: #0095FF;
     height: 2.3rem;
     border-bottom: 1px solid #0095FF;
     box-shadow: none;
@@ -111,6 +114,7 @@ input[type="text"],input[type="date"],input[type="password"] {
     
     font-size: 0.75rem;
 }
+
 .side-border {
     border-right: 1px white solid;
     -moz-border-image: -moz-linear-gradient(bottom, #fa5451 0%, #fcee4f 100%);
@@ -118,6 +122,7 @@ input[type="text"],input[type="date"],input[type="password"] {
     border-image: linear-gradient(to top, #fa5451 0%, #fcee4f 100%);
     border-image-slice: 1;
 }
+
 .left-input {
     padding-right: 15px;
 }
@@ -125,25 +130,25 @@ input[type="text"],input[type="date"],input[type="password"] {
     padding-left: 15px;
 }
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-    color: #707070;
+    color: #AC69FF;
     font-size: 0.75rem;
 }
 :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-    color: #707070;
+    color: #AC69FF;
     opacity:  1;
     font-size: 0.75rem;
 }
 ::-moz-placeholder { /* Mozilla Firefox 19+ */
-    color: #707070;
+    color: #AC69FF;
     opacity:  1;
     font-size: 0.75rem;
 }
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
-    color: #707070;
+    color: #AC69FF;
     font-size: 0.75rem;
 }
 ::-ms-input-placeholder { /* Microsoft Edge */
-    color: #707070;
+    color: black;
     font-size: 0.75rem;
 }
 .custom-btn {
