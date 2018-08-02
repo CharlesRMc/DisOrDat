@@ -1,6 +1,9 @@
 # disordat
 In today’s ever growing peer influence, we here at Dis or Dat decided to kick it up a notch and allow you to get even more opinions regarding everyday life choices. From choices such as wardrobe and food, to bigger life decisions regarding cars and vacation hotspots. Every decision gets easier with your peers approval. 
 
+# Live Site
+https://disordat.herokuapp.com/
+
 
 ## Breakdown
 1. Our app consists of users creating "Decisions", each decision will have two choice the poster creates. From there other users will be able to vote on what choice they find to be the better option.
